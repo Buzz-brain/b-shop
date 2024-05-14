@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <!-- <script defer src="/script/productsDisplay.js"></script> -->
+</head>
+<body>
+    <div class="overlay">
+        <div>
+            <p>B-Sh<img style="margin-right: 3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        </div>
+        <ul>
+            <a href="/users"><li><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
+            <a href="/adminProfile"><li><img src="/css/icons/user.png" alt="">Profile</li></a>
+            <a href="/productsDisplay"><li class="active"><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+        </ul>
+    </div>
+    
+
+    <div style="width: 80%;">
+        <header>
+            <div class="container">
+                <% admin.forEach(function(admin) { %>
+                    <h2>Welcome, Admin <%= admin.username %></h2>
+                <% }); %>
+                <form action="/admin/searchProduct" method="POST" class="search">
+                    <button class="searchBtn" type="submit">
+                        <img src="/css/icons/search.png" alt="search icon">
+                    </button>
+                    <input type="search" name="search" placeholder="Search Products">
+                    <select name="category">
+                        <option value="">All Categories</option>
+                        <option value="Shoe">Shoe</option>
+                        <option value="Sandal">Sandal</option>
+                        <option value="Sneakers">Sneakers</option>
+                    </select>
+                    <button type="submit" class="categoriesBtn"><img src="/css/icons/searchwhite.png" width="16px" alt="search icon"></button>
+                </form>
+            </div>
+        </header>
+        <main> 
+            <div class="container">
+                <div id="addBtnCtn">
+                    <a href="/addProduct" class="addProduct"><img src="/css/icons/plus.png" alt=""><button id="addBtn">Add New Product</button></a>
+                </div>
+                <div class="productPage">
+                    <!-- <div id="productsSection" class="productsSection"></div> -->
+                    <div class="productsSection">
+                        <% products.forEach(function(products) { %>
+                            <div id="productsSection">
+                                <div class="productCtn" id = "${products[i].id}">
+                                    <div class="productCtnOne">
+                                        <div class="productImg">
+                                            <img src="<%=products.imageURL%>" alt="">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="productCtnTwo">
+                                        <p class="productName"><%=products.productName%></p>
+                                        <p class="brandName"><%=products.brandName%></p>
+                                        <div class="ratingCtn">
+                                            <img src="/css/icons/star.png" alt="rating icon"> 
+                                            <p class="rating"><%=products.rating%></p>
+                                        </div>
+                                        <div class="priceCtn">
+                                            <p class="delPrice">$<del><%=products.delPrice%></del></p>
+                                            <p class="price">$<%=products.currentPrice%></p>
+                                        </div>
+                                        <div id="crudBtn">
+                                            <div class="editBtnCtn">
+                                                <a href="/editProduct/<%= products._id %>"><button id="editBtn"><img src="/css/icons/edit.png" alt=""></button></a>
+                                            </div>
+                                            <div class="viewBtnCtn">
+                                                <a href="/viewProductDetails/<%= products._id %>"><button id="viewBtn"><img src="css/icons/view.png" alt=""></button></a>
+                                            </div>
+                                            <div class="deleteBtnCtn">
+                                                <form action="/deleteProduct/<%= products._id %>" method="POST">
+                                                    <button type="submit" class="btn btn-danger" id="deleteBtn"><img src="/css/icons/delete.png" alt=""></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

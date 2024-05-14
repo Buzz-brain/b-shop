@@ -1,0 +1,104 @@
+.profileInformation  {
+    border: 1px solid rgba(156, 156, 156, 0.342);
+    width: 100%;
+    padding: 25px 35px;
+    border-radius: 20px;
+}
+.editProfile {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: orangered;
+    margin-bottom: 20px;
+}
+.profileInfoSectionOne div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.profileInfoSectionTwo div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.profileInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.profileInfoSectionOne{
+    width: 48%;
+}
+.profileInfoSectionTwo{
+    width: 48%;
+}
+label {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.profileInformation input {
+    height: 40px;
+    padding: 15px;
+    background-color: rgba(156, 156, 156, 0.205);
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-size: .9rem;
+}
+.profileInformation input:focus {
+    outline: 1px solid orangered;
+}
+.passwordChange {
+    display: flex;
+    flex-direction: column;
+}
+.passwordChange input{
+    margin-bottom: 15px;
+}
+.profileButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+.profileButtons button {
+    padding: 15px 35px;
+    font-size: .8rem;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.cancelBtn {
+    border: none;
+    background-color: white;
+    margin-right: 10px;
+    border: 1px solid white;
+}
+.cancelBtn:hover {
+    border: 1px solid black;
+    background-color: white;
+}
+.saveChangesBtn {
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+}
+.saveChangesBtn:hover {
+    background-color: white;
+    color: orangered;
+}
+
+
+@media (max-width:768px) {
+    .profileInfo {
+        flex-direction: column;
+    }
+    .profileInfoSectionOne{
+        width: 100%;
+    }
+    .profileInfoSectionTwo{
+        width: 100%;
+    }
+} 
+@media (max-width:1200px) {
+
+}
+
+

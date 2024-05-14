@@ -1,0 +1,172 @@
+.productPage {
+    margin-top: 50px;
+    position: relative;
+}
+.productMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    margin-bottom: 10px;
+}
+.lThan, .gThan {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 7px;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.185);
+}
+.arrowCtn .lThan img {
+    transform: rotate(180deg);
+}
+.moveAllToCartBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    height: 43px;
+    border: 1px solid black;
+    border-radius: 7px;
+    margin-right: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-size: .9rem;
+}
+.moveAllToCartBtn:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+.wishlistSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 23%));
+    gap: 30px;
+    position: relative;
+    min-height: 35vh;
+}
+.wishlistEmpty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+}
+.productText {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.productCtnOne {
+    background-color: rgba(128, 128, 128, 0.185);
+    padding: 15px;
+    border-radius: 10px;
+}
+.binCtn {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.productImg {
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    margin: auto;
+}
+.productImg img {
+    height: 190px;
+    width: 190px;
+    transition: all .2s ease;
+}
+.productImg img:hover {
+    height: 200px;
+    width: 200px;
+}
+.productName {
+    font-weight: 700;
+    font-size: 1rem;
+}
+.ratingCtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 53px;
+    height: 30px;
+}
+.ratingCtn img{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.rating {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.brandName {
+    font-size: .9rem;
+    color: rgb(146, 146, 146);
+    font-weight: 700;
+}
+
+.productCtnTwo {
+    margin-top: 15px;
+    height: 100px;
+    position: relative;
+}
+.addToCartBtn {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    cursor: pointer;
+}
+.addToCartBtn img{
+    width: 33px;
+}
+.priceCtn {
+    display: flex;
+    justify-items: start;
+    align-items: center;
+}
+.delPrice {
+    margin-right: 15px;
+}
+.price {
+    font-weight: bold;
+}
+.seeProducts {
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 7px;
+    position: absolute;
+    left: 44%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.seeProducts:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+#productsSection {
+    display: none;
+}

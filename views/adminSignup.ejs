@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up page</title>
+    <link rel="stylesheet" href="/css/form.css">
+    <script defer src="script/register.js"></script>
+</head>
+<body>
+    <div id="message"></div>
+    <main class="container flex-center">
+        <div class="logo flex-center">
+            <img src="/css/icons/logohere.png" alt="logo image">
+        </div>
+        <div class="flex">
+            <form action="/adminSignup" method="post" name="form">
+                <h1>Welcome !</h1>
+                <!-- <a href="/"><div class="signUpWithGoogle">
+                    <img src="/socialIcons/google.png" class="goggleIcon" alt="google icon">
+                    <p>Sign up with Google</p>
+                </div></a>
+                <p class="loginWithEmail">
+                &HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine; Or Login with E-mail &HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;
+                </p> -->
+                <div class="inputCtn">
+                    <span id="placeholder">Firstname</span>
+                    <input type="text" class="input" placeholder="First Name" name="firstname">
+                </div>
+                <div class="inputCtn">
+                    <span id="placeholder">Username</span>
+                    <input type="text" class="input" placeholder="Username" name="username">
+                </div>
+                <div class="inputCtn">
+                    <span id="placeholder">Email Address</span>
+                    <input type="email" class="input" placeholder="Email Address" name="email">
+                </div>
+                <div class="inputCtn">
+                    <span id="placeholder">Password</span>
+                    <input type="password" class="input" placeholder="Password" name="password">
+                </div>
+                <div class="inputCtn">
+                    <span id="placeholder">Confirm Password</span>
+                <input type="password" class="input" placeholder="Confirm Password" name="cPassword">
+                </div>
+                
+                <div class="agreeBox">
+                    <input type="checkbox">
+                    <p>Agree to all <b>Terms & Conditions</b></p>
+                </div>
+                
+                <button type="submit">Sign Up</button>
+                <p class="haveAccount">Already have an Account? <a href="/login">Login</a></p>
+            </form>
+            <div class="signImg flex-center">
+                <img src="/images/signup.png" alt="Sign up image">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

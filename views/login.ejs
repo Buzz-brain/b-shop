@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="/css/form.css">
+    <script defer src="script/login.js"></script>
+</head>
+<body>
+    <div id="message"></div>
+    <main class="container flex-center">
+        <div class="logo flex-center">
+            <img src="/css/icons/logohere.png" alt="logo image">
+        </div>
+        <div class="flex">
+            <form action="/login" method="post" name="form">
+                <h1>Welcome Back!</h1>
+                <!-- <a href="/"><div class="signUpWithGoogle">
+                    <img src="/socialIcons/google.png" class="goggleIcon" alt="google icon">
+                    <p>Sign up with Google</p>
+                </a> -->
+                <!-- <p class="loginWithEmail">
+                &HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine; Or Login with E-mail &HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;&HorizontalLine;
+                </p> -->
+                <div class="inputCtn">
+                    <span id="placeholder">Email Address</span>
+                    <input type="email" class="input" placeholder="Email Address" name="email">
+                </div>
+                <div class="inputCtn">
+                    <span id="placeholder">Password</span>
+                    <input type="password" class="input" placeholder="Password" name="password">
+                </div>
+                <div class="forgetpwd flex">
+                    <p>Keep me logged in</p>
+                    <p>Forget password?</p>
+                </div>
+                <button type="submit">Login</button>
+                <p class="haveAccount">Don't have an account? <a href="/signup">Sign Up</a></p>
+            </form>
+            <div class="signImg flex-center">
+                <img src="/images/login.png" alt="Login image">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

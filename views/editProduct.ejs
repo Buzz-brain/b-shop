@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="overlay">
+        <div>
+            <p>B-Sh<img style="margin-right:3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        </div>
+        <ul>
+            <a href="/users"><li><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
+            <a href="/adminProfile"><li><img src="/css/icons/user.png" alt="">Profile</li></a>
+            <a href="/productsDisplay"><li class="active"><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+        </ul>
+    </div>
+
+    <div style="width: 80%;">
+        <header>
+            <div class="container">
+                <h2>Welcome, Admin</h2>
+                <form action="/search" method="POST" class="search">
+                    <button class="searchBtn" type="submit">
+                        <img src="/css/icons/search.png" alt="search icon">
+                    </button>
+                    <input type="search" name="search" placeholder="Search Users">
+                    <select>
+                        <option value="All Categories">All Categories</option>
+                    </select>
+                    <button class="categoriesBtn"><img src="/css/icons/searchwhite.png" width="16px" alt="search icon"></button>
+                </form>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="menu">
+                    <div>
+                        <a href="/"><p>Product</p></a><b>&gt;&nbsp;</b>
+                        <a href="/products"><p class="activeMenu">Edit Product</p></a>
+                    </div>
+                </div>
+                <form action="/updateProduct/<%= product._id %>" class="productInformation" method="POST">
+                    <p class="productDetail">Edit Product Detail</p>
+                    <div class="productInfoSection">
+                        <div>
+                            <label for="productName">Product Name</label>
+                            <input type="text" name="productName" id="productName" value="<%= product.productName %>">
+                        </div>
+                        <div>
+                            <label for="brandName">Brand Name</label>
+                            <input type="text" name="brandName" value="<%= product.brandName %>" id="brandName">
+                        </div>
+                        <div>
+                            <label for="rating">Rating</label>
+                            <input type="text" name="rating" value="<%= product.rating %>" id="rating">
+                        </div>
+                        <div>
+                            <label for="delPrice">Initial Price</label>
+                            <input type="text" name="delPrice" value="<%= product.delPrice %>" id="delPrice">
+                        </div>
+                        <div>
+                            <label for="currentPrice">Current Price</label>
+                            <input type="text" name="currentPrice" value="<%= product.currentPrice %>" id="currentPrice">
+                        </div>
+                        <div>
+                            <label>Provide product image link</label>
+                            <input type="text" name="profileFile" value="<%= product.profileFile %>" required>
+                        </div>
+                        <button type="submit" class="saveBtn">Save Changes</button>
+                        <!-- <div>
+                            <label style="font-size: 1.5rem; margin-bottom: 20px;">Upload product picture</label>
+                            <input style="margin-bottom: 20px; margin-top: 20px" type="file" name="profileFile" value="<%= product.profileFile %>" required>
+                            <button type="submit" class="addBtn">Update Product</button>
+                        </div> -->
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

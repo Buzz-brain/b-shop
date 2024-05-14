@@ -1,0 +1,52 @@
+main {
+    margin-top: 35px;
+}
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+.menu a {
+    padding: 0px 5px;
+    font-weight: 700;
+}
+
+.errorPage {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.errorPage h1{
+    font-weight: 500;
+    font-size: 5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.errorPage p{
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+.backToHome {
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+    padding: 15px 40px;
+    font-size: .8rem;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.backToHome:hover {
+    background-color: white;
+    color: orangered;
+}
+
+
+
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <link rel="stylesheet" href="/css/order.css">
+    <script defer src="/script/jquery3.6.1.js"></script>
+    <script defer src="/script/order.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="firstHeader container flex">
+            <div class="logo">
+                <img src="/css/icons/logohere.png" alt="logo image">
+            </div>
+
+            <form action="/searchProducts" method="POST" class="searchCtn">
+                <button class="searchBtn" type="submit">
+                <img src="/css/icons/search.png" alt="search icon" class="searchIcon"></button>
+                <input type="search" name="search" placeholder="Search Products">
+                <select name="category">
+                    <option value="">All Categories</option>
+                        <option value="Shoe">Shoe</option>
+                        <option value="Sandal">Sandal</option>
+                        <option value="Sneakers">Sneakers</option>
+                </select>
+                <button class="searchCartBtn" type="submit"><img src="/css/icons/searchwhite.png" width="16px" alt="search icon"></button>
+            </form>
+
+            <div class="dataCtn">
+                <div id="accIcon">
+                    <img src="/css/icons/account.png" alt="account icon">
+                </div>
+                <a href="/wishlist">
+                    <div class="wishlistIcon">
+                    <span id="wishlistCount">0</span>
+                    <img src="/css/icons/wishlist.png" alt="wishlist icon">
+                </div></a>
+                <a href="/cart"><div class="cartIcon">
+                    <span id="cartCount">0</span>
+                    <img src="/css/icons/shopping-cart.png" alt="cart icon">
+                </div></a>
+            </div>
+            <div id="accountOverlay">
+                <ul>
+                    <a href="/account"><li>Account</li></a>
+                    <a href="/checkout"><li>Order</li></a>
+                    <form action="/user/logout">
+                        <button type="submit" class="logoutBtn"><li>Log Out</li></button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container flex-end">
+            <ul class="menu">
+                <a href="/" class="active"><li>Home</li></a>
+                <a href="/products"><li>Products</li></a>
+                <a href="/about"><li>About</li></a>
+                <!-- <a href="/404"><li>Trending Products</li></a> -->
+                <!-- <a href="/404"><li>Special Offers</li></a> -->
+                <a href="/contact"><li>Contact</li></a>                                         
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="orderModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form action="/checkout" method="post" id="paymentForm" name="form">
+                    <!-- Payment details fields -->
+                    <input type="text" name="cardNumber" placeholder="Card Number">
+                    <input type="text" name="expiryDate" placeholder="MM/YY">
+                    <input type="text" name="cvv" placeholder="CVV">
+                    <input type="text" name="amount" placeholder="Amount">
+                    <!-- Billing details fields -->
+                    <input type="text" name="fullName" placeholder="Full Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="tel" name="phoneNumber" placeholder="Phone Number">
+                    <!-- Other billing details fields -->
+                    <button type="submit">Pay Now</button>
+                  </form>
+                  
+                
+            </div>
+        </div>
+        <div class="checkoutPage container">
+           <div class="checkoutCtn">
+                <div class="checkoutInformation">
+                    <form action="" method="POST">
+                        <div class="checkoutInfo">
+                            <h2>Billing Details</h2>
+                            <div class="infoCtn">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname">
+                            </div>
+                            <div class="infoCtn">
+                                <label for="companyName">Company Name</label>
+                                <input type="text" id="companyName">
+                            </div>
+                            <div class="infoCtn">
+                                <label for="streetAddress">Street Address</label>
+                                <input type="text" id="streetAddress">
+                            </div>
+                            <div class="infoCtn">
+                                <label for="apartment">Apartment, floor, etc. (Optional)</label>
+                                <input type="text" id="streetAddress">
+                            </div>
+                            <div class="infoCtn">
+                                <label for="town">Town / City</label>
+                                <input type="text" id="town">
+                            </div>
+                            <div class="infoCtn">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="text" id="phoneNumber">
+                            </div>
+                            <div class="infoCtn">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="text" id="emailAddress">
+                            </div>
+                            <div class="saveInfo">
+                                <input type="checkbox" id="saveInfo">
+                                <label for="saveInfo">Save this information for faster check-out next time</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="checkoutMenu">
+                    <div class="checkoutItem">
+                        <img src="/products/jumbotronOne.png" alt="">
+                        <p id="itemName">Air Max</p>
+                        <p id="itemPrice">$15.98</p>
+                    </div>
+                    <div class="checkoutItem">
+                        <img src="/products/imageTwelve-removebg-preview.png" alt="">
+                        <p id="itemName">Air Max</p>
+                        <p id="itemPrice">$15.98</p>
+                    </div>
+                    <div class="checkoutItem">
+                        <img src="/products/imageSeven-removebg-preview.png" alt="">
+                        <p id="itemName">Air Max</p>
+                        <p id="itemPrice">$15.98</p>
+                    </div>
+
+                    <div class="subtotal">
+                        <p>Subtotal:</p>
+                        <p>$120.00</p>
+                    </div>
+                    <div class="shipping">
+                        <p>Shipping:</p>
+                        <p>$120.00</p>
+                    </div>
+                    <div class="total">
+                        <p>Total:</p>
+                        <p>$120.00</p>
+                    </div>
+
+                    <!-- <div class="paymentOption">
+                        <div>
+                            <input type="radio" id="bank" name="paymentOption"> <label for="bank">Bank</label>
+                        </div>
+                        
+                        <div>
+                            <input type="radio" id="cashOnDelivery" name="paymentOption"> 
+                        <label for="cashOnDelivery">Cash on delivery</label>
+                        </div>
+                    </div> -->
+
+                    <button id="placeOrder" class="placeOrder">Place Order</button>
+                </div>
+           </div>
+        </div>
+    </main>
+    <div class="absolute none">
+        <div id="wishlistSection" class="wishlistSection"></div>
+        <div id="wishlistCountTwo"></div>
+        <div id="cartCountTwo"></div>
+        <div id="cartSection" class="cartSection"></div>
+        <div id="subTOTAL"></div>
+        <div id="Total"></div>
+        <div id="cartTotal"></div>
+        <div id="shippingPrice"></div>
+        <div class="moveAllToCartBtn"></div>
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+

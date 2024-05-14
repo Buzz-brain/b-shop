@@ -1,0 +1,59 @@
+# ---------  NODEMAILER  ----------
+# Send an email message after a user adds a product to cart or wishlist
+# Send an email message after a user sends a contact message
+# To validate user registeration
+# To authenticate user during forget password
+
+
+# ---------  PAYSTACK  ------------ 
+# For payment of products purchased
+
+
+
+
+# HOME:
+Add B-shop logo to user side
+
+# ABOUT:
+Page on 404, create design for Page
+
+# CONTACT: 
+Add nodemailer to send email message (pending)
+
+# ACCOUNT:  
+Add email verification to this user profile changes (password most importantly) using Node Mailer (pending)
+
+# ORDER/CHECKOUT: 
+Implement a payment system
+
+
+
+
+
+
+DONE
+Create modal for product detail, link shop now - Home page
+Show registered user's name - Account page
+When user click on the account route, If cookies is set render the account page else redirect to the login page - Account page
+Create reguser auth function to restrict access to route if not logged in - General
+Implemet move all to cart - Wishlist
+Link proceed to checkout and return to shop - Cart
+Complete design and align columns well - Cart
+Make the jumbotron change it's background with respect to time - Home
+User should be able to edit firstname, lastname, email and residential address - Account
+Product image should not have background, use multer and cloudinary - Product
+Create modal for product detail - Product
+Link all pages on page - Account
+
+
+
+
+
+
+
+
+
+# CHECK OUT 
+# I am to read up data normalization in sql
+# Check out for dummy email used in node mailer
+# How to create an api in php

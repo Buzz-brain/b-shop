@@ -1,0 +1,147 @@
+.productPage {
+    margin-top: 35px;
+    position: relative;
+}
+.productMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.productText {
+    margin-bottom: 30px;
+}
+.welcome span {
+    color: orangered;
+    margin-left: 5px;
+}
+
+
+
+
+
+.accountCtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accountMenu  {
+    width: 30%;
+}
+.profileInformation  {
+    border: 1px solid rgba(156, 156, 156, 0.342);
+    width: 70%;
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+.accountTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.accountMenu ul {
+    list-style-type: none;
+    margin-left: 30px;
+}
+.accountMenu li {
+    padding: 5px;
+}
+.manageAccount {
+    margin-bottom: 20px;
+}
+.manageAccount a:hover{
+    color: orangered
+}
+.myOrders {
+    margin-bottom: 20px;
+}
+.myOrders a:hover{
+    color: orangered
+}
+
+
+
+
+
+
+
+
+.editProfile {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: orangered;
+    margin-bottom: 20px;
+}
+.profileInfoSectionOne div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.profileInfoSectionTwo div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.profileInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.profileInfoSectionOne{
+    width: 48%;
+}
+.profileInfoSectionTwo{
+    width: 48%;
+}
+label {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.profileInformation input {
+    height: 40px;
+    padding: 15px;
+    background-color: rgba(156, 156, 156, 0.205);
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-size: .9rem;
+}
+.passwordChange {
+    display: flex;
+    flex-direction: column;
+}
+.passwordChange input{
+    margin-bottom: 15px;
+}
+.profileButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+.profileButtons button {
+    padding: 15px 45px;
+    font-size: .8rem;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.cancelBtn {
+    border: none;
+    background-color: white;
+    margin-right: 10px;
+}
+.cancelBtn:hover {
+    border: 1px solid black;
+    background-color: white;
+}
+.saveChangesBtn {
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+}
+.saveChangesBtn:hover {
+    background-color: white;
+    color: orangered;
+}

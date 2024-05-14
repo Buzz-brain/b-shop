@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/404.css">
+    <script defer src="script/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="firstHeader container flex">
+            <div class="logo">
+                <img src="/css/icons/logohere.png" alt="logo image">
+            </div>
+
+            <form action="/searchProducts" method="POST" class="searchCtn">
+                <button class="searchBtn" type="submit">
+                <img src="/css/icons/search.png" alt="search icon" class="searchIcon"></button>
+                <input type="search" name="search" placeholder="Search Products">
+                <select name="category">
+                    <option value="">All Categories</option>
+                        <option value="Shoe">Shoe</option>
+                        <option value="Sandal">Sandal</option>
+                        <option value="Sneakers">Sneakers</option>
+                </select>
+                <button class="searchCartBtn" type="submit"><img src="/css/icons/searchwhite.png" width="16px" alt="search icon"></button>
+            </form>
+
+            <div class="dataCtn">
+                <div id="accIcon">
+                    <img src="/css/icons/account.png" alt="account icon">
+                </div>
+                <a href="/wishlist">
+                    <div class="wishlistIcon">
+                    <span id="wishlistCount">0</span>
+                    <img src="/css/icons/wishlist.png" alt="wishlist icon">
+                </div></a>
+                <a href="/cart"><div class="cartIcon">
+                    <span id="cartCount">0</span>
+                    <img src="/css/icons/shopping-cart.png" alt="cart icon">
+                </div></a>
+            </div>
+            <div id="accountOverlay">
+                <ul>
+                    <a href="/account"><li>Account</li></a>
+                    <a href="/checkout"><li>Order</li></a>
+                    <a href="/login"><li>Log Out</li></a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container flex-end">
+            <ul class="menu">
+                <a href="/"><li>Home</li></a>
+                <a href="/products"><li>Products</li></a>
+                <a href="/about"><li>About</li></a>
+                <!-- <a href="/404"><li>Trending Products</li></a> -->
+                <!-- <a href="/404"><li>Special Offers</li></a> -->
+                <a href="/contact"><li>Contact</li></a>                                         
+            </ul>
+        </div>
+    </header>
+   <main>
+        <div class="menu container">
+            <ul>
+                <a href="/"><li>Home</li></a>/
+                <a href="/404"class="active"><li>404 Error</li></a>
+            </ul>
+        </div>
+        <div class="errorPage container">
+            <h1>404 Not Found</h1>
+            <p>Page not found. You may go to home page</p>
+            <a href="/"><button class="backToHome">Back to home page</button></a>
+        </div>
+        
+   </main>
+   <div class="absolute none">
+    <div id="wishlistSection" class="wishlistSection"></div>
+    <div id="wishlistCountTwo"></div>
+    <div id="cartCountTwo"></div>
+    <div id="cartSection" class="cartSection"></div>
+    <div id="subTOTAL"></div>
+    <div id="Total"></div>
+    <div id="cartTotal"></div>
+    <div id="shippingPrice"></div>
+    <div class="moveAllToCartBtn"></div>
+</div>
+</body>
+</html>

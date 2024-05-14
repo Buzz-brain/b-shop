@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    min-height: 100vh;
+}
+.container {
+    width: 85%;
+    margin: auto;
+}
+header {
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background-color: white;
+    /* box-shadow: 1px 1px 20px grey; */
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.432);
+    transition: all .5s ease;
+}
+a:hover {
+    color: black;
+}
+header {
+    height: 125px;
+    padding-top: 10px;
+    /* position: fixed; */
+}
+.firstHeader {
+    height: 70px;
+    position: relative;
+}
+
+.searchCtn {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    position: relative;
+}
+.searchIcon {
+    width: 16px;
+}
+.searchBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+.dataCtn {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.searchCtn input {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    width: 100%;
+    padding-left: 45px;
+    padding-right: 15px;
+    border: 1px solid rgba(156, 156, 156, 0.808);
+    border-right: none;
+}
+.searchCtn select {
+    padding: 0 5px;
+    border: 1px solid rgba(156, 156, 156, 0.808);
+    border-right: none;
+    color: rgba(156, 156, 156, 0.808);
+    cursor: pointer;
+}
+.searchCartBtn {
+    padding: 10px 15px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    cursor: pointer;
+}
+.dataCtn div {
+    padding: 7px 12px;
+    border: 1px solid rgba(156, 156, 156, 0.808);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dataCtn div:hover{
+    border: 1px solid orangered;
+    background-color: orangered;
+}
+.activebox {
+    border: 1px solid orangered;
+    background-color: orangered;
+}
+.wishlistIcon, .cartIcon {
+    position: relative;
+}
+.dataCtn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    padding: 10px;
+    height: 25px;
+    background-color: orangered;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    border-radius: 100%;
+    color: white;
+    font-size: .6rem;
+}
+ul.menu{
+    position: relative;
+    padding: 10px 0px 5px 0px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    font-size: .9rem;
+    width: 30%;
+    max-width: 700px;
+    font-weight: bold;
+}
+#accountOverlay {
+    z-index: 5;
+    position: absolute;
+    width: 200px;
+    border-radius: 10px;
+    background-color: rgb(243, 88, 32);
+    border: 1px solid orangered;
+    display: none;
+    top: 58px;
+    right: 0;
+}
+
+#accountOverlay ul {
+    list-style-type: none;
+    width: 100%;
+}
+#accountOverlay ul li{
+    padding: 12px;
+    color: white;
+    transition: all .2s ease ;
+}
+#accountOverlay ul li:hover{
+    background: hsla(0, 0%, 50%, 0.877);
+    background: white;
+    color: orangered;
+    border-radius: 10px;
+}
+.logoutBtn {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.active {
+    color: black;
+}
+.absolute {
+    position: absolute;
+    background-color: blue;
+    min-width: 300px;
+    top: 0;
+}
+.none {
+    display: none;
+}
+#message {
+    padding: 10px 10px;
+    position: fixed;
+    color: red;
+    background-color: white;
+    box-shadow: 1px 1px 7px rgb(165, 164, 164);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    top: 150px;
+    transition: all .5s ease;
+    transform: translate(-2000%);
+    z-index: 4;
+}

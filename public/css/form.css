@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    min-height: 100vh;
+}
+.container {
+    width: 70%;
+    margin: auto;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+}
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form {
+    width: 45%;
+}
+.signImg {
+    width: 50%;
+    text-align: right;
+    margin-right: -20px;
+    position: relative;
+}
+.signImg img {
+    width: 500px;
+}
+.logo {
+    margin-bottom: 25px;
+    align-self: center;
+}
+.logo img{
+    width: 140px;
+}
+h1 {
+    color: orangered;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.goggleIcon {
+    width: 1rem;
+    margin-right: 15px;
+}
+.signUpWithGoogle {
+    border: 2px solid rgba(196, 195, 195, 0.404);
+    border-radius: 5px;
+    padding: .3em 0;
+    margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.signUpWithGoogle p{
+    font-size: .95rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.596);
+}
+.loginWithEmail {
+    margin-bottom: 25px;
+    font-size: .75rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+button {
+    width: 100%;
+    height: 40px;
+    color: white;
+    background-color: orangered;
+    outline: none;
+    border: none;
+    margin-bottom: 25px; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+.input {
+    width: 100%;
+    margin-bottom: 25px; 
+    padding: .6em 1.5em;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid rgba(156, 156, 156, 0.808);
+}
+
+.inputCtn {
+    position: relative;
+}
+#placeholder {
+    font-size: .7rem;
+    position: absolute;
+    left: 14px;
+    top: -8px;
+    background-color: white;
+    padding: 0 7px;
+    color: rgb(136, 135, 135);
+    display: none;
+}
+span {
+    text-align: left;
+    font-size: .4rem;
+}
+.agreeBox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    color: rgb(136, 135, 135);
+}
+.agreeBox b {
+    color: rgba(0, 0, 0, 0.815);
+}
+.agreeBox input {
+    margin-right: 20px;
+    cursor: pointer;
+    z-index: 5;
+
+}
+.agreeBox p {
+    font-size: .8rem;
+}
+.haveAccount {
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.404);
+    padding-top: 10px;
+    width: 80%;
+    margin: auto;
+    font-size: .9rem;
+}
+.haveAccount a {
+     color: orangered;
+     text-decoration: none;
+}
+
+
+
+
+
+/* Login */
+.forgetpwd {
+    margin-top: -15px;
+    margin-bottom: 40px;
+    font-size: .7rem;
+    color: rgb(112, 112, 112);
+}
+
+#message {
+    padding: 10px 10px;
+    position: absolute;
+    color: red;
+    background-color: white;
+    box-shadow: 1px 1px 7px rgb(165, 164, 164);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    top: 20px;
+    transition: all .5s ease;
+    transform: translate(-100%);
+}

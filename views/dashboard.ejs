@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/userDisplay.css">
+    <script defer src="/script/jquery3.6.1.js"></script>
+</head>
+<body>
+    <div class="overlay">
+        <div>
+            <p>B-Sh<img style="margin-right: 3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        </div>
+        <ul>
+            <a href="/users"><li class="active"><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
+            <a href="/adminProfile"><li><img src="/css/icons/user.png" alt="">Profile</li></a>
+            <a href="/productsDisplay"><li><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+            <form action="/admin/logout">
+                <button type="submit"><li><img src="/css/icons/user.png" alt="">Log Out</li></button>
+            </form>
+        </ul>
+    </div>
+
+    <div style="width: 80%;">
+        <header>
+            <div class="container">
+                <!-- Correct this Later -->
+                <% admin.forEach(function(admin) { %>
+                    <h2>Welcome, Admin <%= admin.username %></h2>
+                <% }); %>
+                <form action="/search" method="POST" class="search">
+                    <button class="searchBtn" type="submit">
+                        <img src="/css/icons/search.png" alt="search icon">
+                    </button>
+                    <input type="search" name="search" placeholder="Search Users">
+                    <select>
+                        <option value="All Categories">All Categories</option>
+                    </select>
+                    <button class="categoriesBtn"><img src="/css/icons/searchwhite.png" width="16px" alt="search icon"></button>
+                </form>
+            </div>
+        </header>
+        <main>
+            <p class="container registeredUsers">All Registered Users</p>
+            <hr><br>
+            <div class="container usersSection">
+                <% feedback.forEach(function(feedback) { %>
+                    <div class="userFlex">
+                        <div class="userPhotoCtn">
+                            <!-- <img src="/css/icons/account.png" alt=""> -->
+                            <img src="https://img.freepik.com/premium-photo/face-young-black-african-man_251136-3684.jpg?w=360" alt="">
+                        </div>
+                        <div class="userDetailCtn">
+                            <span style="font-weight: bold;">First name:</span>
+                            <span><%= feedback.firstname %></span><br>
+                            <span style="font-weight: bold;">Last name:</span>
+                            <span><%= feedback.lastname %></span><br>
+                            <span style="font-weight: bold;">Username:</span>
+                            <span><%= feedback.username%></span>
+                            <p style="font-weight: bold;">Email Address:</p>
+                            <p><%= feedback.email %></p>
+                            <p style="font-weight: bold;">Password:</p>
+                            <p style="overflow: scroll;"><%= feedback.password %></p>
+                            <p style="font-weight: bold;">Residential Address:</p>
+                            <p><%= feedback.address %></p>
+                            <div id="crudBtns">
+                                <div class="edBtnCtn">
+                                    <a href="/edit/<%= feedback._id %>"><button id="editBtn"><img src="/css/icons/edit.png" alt=""></button></a>
+                                </div>
+                                <div class="delBtnCtn">
+                                    <form action="/delete/<%= feedback._id %>" method="POST">
+                                        <button type="submit" class="btn btn-danger" id="deleteBtn"><img src="/css/icons/delete.png" alt=""></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

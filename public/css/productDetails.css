@@ -1,0 +1,226 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    gap: 50px;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  /* Close Button */
+  .close {
+    color: #aaa;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    padding: 5px 20px 0px 0px;
+    right: 0;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .productAmountCtnModal {
+    display: flex;
+  }
+  
+
+.productImageCtnModal {
+    width: 48%;
+    display: grid;
+    grid-template-areas: 
+    "imageOne imageFour imageFour imageFour"
+    "imageTwo imageFour imageFour imageFour"
+    "imageThree imageFour imageFour imageFour";
+    grid-column-gap: 25px;
+    grid-row-gap: 10px;
+
+}
+.imageOne, .imageTwo, .imageThree {
+    height: 100px;
+}
+.imageOne {
+    grid-area: imageOne;
+}
+.imageTwo {
+    grid-area: imageTwo;
+}
+.imageThree {
+    grid-area: imageThree;
+}
+.imageFour {
+    grid-area: imageFour;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.productImageCtnModal div{
+    background-color: rgba(128, 128, 128, 0.199);
+    border-radius: 10px;
+}
+
+.productDescCtnModal {
+    width: 48%;
+}
+.productImageCtnModal img{
+    width: 100px;
+}
+#productImageModal {
+    width: 200px;
+}
+
+.productNameModal {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 7px;
+}
+.ratingCtnModal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 53px;
+    height: 30px;
+    margin-bottom: 7px;
+}
+.ratingCtnModal img{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.ratingModal {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.brandNameModal {
+    font-size: 1.3rem;
+    color: rgb(146, 146, 146);
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.productCtnTwoModal {
+    margin-top: 15px;
+    height: 100px;
+    position: relative;
+}
+.addToCartBtn {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    cursor: pointer;
+}
+.addToCartBtn img{
+    width: 33px;
+}
+.priceCtnModal {
+    display: flex;
+    justify-items: start;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.delPriceModal {
+    margin-right: 15px;
+}
+.priceModal {
+    font-weight: bold;
+}
+.productDescModal {
+    margin-bottom: 15px;
+}
+
+
+
+.productAmountCtnModal {
+    margin-top: 25px;
+}
+.productAmountModal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+.productAmountModal button{
+    padding: 3px;
+    outline: none;
+    font-size: 1.2rem;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.productAmountModal input{
+    outline: none;
+    padding: 3px;
+    width: 60px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: none;
+    border: 1px solid rgba(170, 169, 169, 0.644);
+}
+.decreaseBtnModal{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: white;
+    border: 1px solid rgb(146, 146, 146);
+}
+.increaseBtnModal{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+}
+.buyNowModal{
+    height: 35px;
+    width: 100px;
+    margin-right: 15px;
+    color: white;
+    font-weight: 600;
+    background-color: orangered;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buyNowModal:hover{
+    color: orangered;
+    background-color: white;
+}
+.wishlistBtnModal{
+    height: 35px;
+    width: 50px;
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+

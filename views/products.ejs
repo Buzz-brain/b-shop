@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/productDetails.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <script defer src="/script/script.js"></script>
+    <script defer src="/script/productDetails.js"></script>
+</head>
+<body>
+    <header>
+        <div class="firstHeader container flex">
+            <div class="logo">
+                <img src="/css/icons/logohere.png" alt="logo image">
+            </div>
+            <form action="/searchforproducts" method="POST" class="searchCtn">
+                <button class="searchBtn" type="submit">
+                <img src="/css/icons/search.png" alt="search icon" class="searchIcon"></button>
+                <input type="search" name="search" placeholder="Search Products">
+                <select name="category">
+                    <option value="">All Categories</option>
+                        <option value="Shoe">Shoe</option>
+                        <option value="Sandal">Sandal</option>
+                        <option value="Sneakers">Sneakers</option>
+                </select>
+                <button class="searchCartBtn" type="submit"><img src="/css/icons/searchwhite.png" width="16px" alt="search icon"></button>
+            </form>
+            <div class="dataCtn">
+                <div id="accIcon">
+                    <img src="/css/icons/account.png" alt="account icon">
+                </div>
+                <a href="/wishlist">
+                    <div class="wishlistIcon">
+                    <span id="wishlistCount">0</span>
+                    <img src="/css/icons/wishlist.png" alt="wishlist icon">
+                </div></a>
+                <a href="/cart"><div class="cartIcon">
+                    <span id="cartCount">0</span>
+                    <img src="/css/icons/shopping-cart.png" alt="cart icon">
+                </div></a>
+            </div>
+            <div id="accountOverlay">
+                <ul>
+                    <a href="/account"><li>Account</li></a>
+                    <a href="/checkout"><li>Order</li></a>
+                    <a href="/login"><li>Log Out</li></a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container flex-end">
+            <ul class="menu">
+                <a href="/"><li>Home</li></a>
+                <a href="/products" class="active"><li>Products</li></a>
+                <a href="/about"><li>About</li></a>
+                <!-- <a href="/404"><li>Trending Products</li></a>
+                <a href="/404"><li>Special Offers</li></a> -->
+                <a href="/contact"><li>Contact</li></a>                                         
+            </ul>
+        </div>
+    </header>
+    
+    <main> 
+        <div id="message"></div>
+        <div class="productPage container">
+            <div class="flex">
+                <p class="productText">Explore Our Products </p>
+                <!-- <div class="arrowCtn flex">
+                    <div><img src="/css/icons/greater-than-symbol.png" alt=""></div>
+                    <div><img src="/css/icons/greater-than-symbol.png" alt=""></div>
+                </div> -->
+            </div>
+
+            <div id="productModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="productImageCtnModal">
+                        <div class="imageOne">
+                            <img src="" alt=""></div>
+                        <div class="imageTwo">
+                            <img src="" alt=""></div>
+                        <div class="imageThree">
+                            <img src="" alt=""></div>
+                        <div class="imageFour">
+                            <img id="productImageModal" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="productDescCtnModal">
+                        <h2 class="productNameModal"></h2>
+                    <p class="brandNameModal"></p>
+                    <div class="ratingCtnModal">
+                        <img src="/css/icons/star.png" alt="rating icon"> 
+                        <p class="ratingModal"></p>
+                    </div>
+                    <div class="priceCtnModal">
+                        $<p class="delPriceModal"><del></del></p>
+                        $<p class="priceModal"></p>
+                    </div>
+                    <div class="productDescModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem incidunt ducimus ratione dolorum asperiores assumenda enim quidem aliquam, qupiditate sunt!</div>
+                    <hr>
+    
+                    <div class="productAmountCtnModal">
+                        <div class="productAmountModal">
+                            <button class="decreaseBtnModal">-</button>
+                            <input type="text" value="1">
+                            <button class="increaseBtnModal">+</button>
+                        </div>
+                        <button class="buyNowModal">Buy Now</button>
+                        <button class="wishlistBtnModal"><img src="/css/icons/wishlist.png" alt=""></button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+
+            <div class="productsSection">
+                <% products.forEach(function(products) { %>
+                    <div id="productsSection" class="productsSection">
+                        <div class="productCtn">
+                            <div class="productCtnOne">
+                                <div class="flex">
+                                    <div class="binCtn wishlistBtn" id="wishlistBtn" data-id="<%= products._id %>">
+                                        <img src="/css/icons/wishlist.png" alt="">
+                                    </div>
+                                    <!-- <a href="/productDetails/<%= products._id %>"> -->
+                                        <div id="viewDetailsBtn" class="binCtn view">
+                                            <img src="/css/icons/viewBlack.png" alt="">
+                                        </div>
+                                    <!-- </a> -->
+                                </div>
+                                <div class="productImg">
+                                    <img class="product-img" src="<%=products.imageURL%>" alt="">
+                                </div>
+                            </div>
+                
+                            <div class="productCtnTwo">
+                                <p class="productName"><%=products.productName%></p>
+                                <p class="brandName"><%=products.brandName%></p>
+                                <div class="ratingCtn">
+                                    <img src="/css/icons/star.png" alt="rating icon"> 
+                                    <p class="rating"><%=products.rating%></p>
+                                </div>
+                                <div class="priceCtn">
+                                    $<del><p class="delPrice"><%=products.delPrice%></p></del>
+                                    $<p class="price"><%=products.currentPrice%></p>
+                                </div>
+                                <div class="addToCartBtn" id="cartBtn" data-id="<%= products._id %>">
+                                    <img src="/css/icons/plus.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </main>
+    <div class="absolute none">
+        <div id="wishlistSection" class="wishlistSection"></div>
+        <div id="wishlistCountTwo"></div>
+        <div id="wishlistCount"></div>
+        <div id="cartCountTwo"></div>
+        <div id="cartSection" class="cartSection"></div>
+        <div id="subTOTAL"></div>
+        <div id="Total"></div>
+        <div id="cartTotal"></div>
+        <div id="shippingPrice"></div>
+    <div class="moveAllToCartBtn"></div>
+
+    </div>
+</body>
+</html>

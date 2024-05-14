@@ -1,0 +1,130 @@
+.checkoutPage {
+    margin-top: 50px;
+    position: relative;
+}
+.checkoutCtn {
+    display: flex;
+    justify-content: space-between;
+}
+.checkoutInformation  {
+    width: 40%;
+    border-radius: 20px;
+}
+.checkoutInfo h2 {
+    margin-bottom: 20px;
+}
+.infoCtn {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.infoCtn input{
+    height: 40px
+}
+.checkoutInfo label {
+    margin-bottom: 10px;
+    color: rgb(104, 103, 103);
+    font-size: .9rem;
+}
+.checkoutInformation input {
+    padding: 15px;
+    background-color: rgba(156, 156, 156, 0.205);
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-size: .9rem;
+}
+.saveInfo {
+    display: flex;
+    justify-content: flex-start;
+}
+.saveInfo input {
+    margin-right: 10px;
+}
+.saveInfo label {
+    margin-bottom: 0px;
+    color: black;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+
+
+
+
+.checkoutMenu  {
+    width: 40%;
+    padding: 80px 0px;
+    border-radius: 20px;
+}
+.checkoutItem  {
+    margin-bottom: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.452);
+    border-radius: 10px;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkoutItem img {
+    width: 70px;
+}
+#itemName, #itemPrice {
+    font-weight: 500;
+}
+.subtotal, .shipping, .total {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.452);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-weight: 500;
+}
+.paymentOption {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.paymentOption div {
+    padding: 10px 0;
+    font-weight: 500;
+}
+.paymentOption input {
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+
+
+
+.couponCodeCtn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+button {
+    padding: 10px 45px;
+    font-size: .8rem;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.couponCode {
+    padding: 10px 15px;
+    width: 58%;
+    border-radius: 5px;
+    border: 2px solid rgba(128, 128, 128, 0.726);
+}
+.applyCoupon {
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+}
+.placeOrder {
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+}
+.placeOrder:hover {
+    background-color: white;
+    color: orangered;
+}
