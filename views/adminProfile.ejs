@@ -6,27 +6,29 @@
     <title>Home page</title>
     <link rel="stylesheet" href="/css/adminProfile.css">
     <link rel="stylesheet" href="/css/userDisplay.css">
-
-    <script defer src="script/script.js"></script>
+    
+    <script defer src="script/admin.js"></script>
 </head>
 <body>
     <div class="overlay">
-        <div>
-            <p>B-Sh<img style="margin-right: 3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        <div class="logo">
+            <span id="close">x</span>
+            <img src="/images/bshopLogoWhite.png" alt="">
         </div>
         <ul>
             <a href="/users"><li><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
             <a href="/adminProfile"><li class="active"><img src="/css/icons/user.png" alt="">Profile</li></a>
             <a href="/productsDisplay"><li><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+            <form action="/admin/logout">
+                <button type="submit"><li><img src="/css/icons/logout.png" alt="">Log Out</li></button>
+            </form>
         </ul>
     </div>
 
-    <div style="width: 80%; position: relative;">
+    <div class="wrapper">
         <header>
             <div class="container">
-                <% admin.forEach(function(admin) { %>
                     <h2>Welcome, Admin <%= admin.username %></h2>
-                <% }); %>
                 <form action="/search" method="POST" class="search">
                     <button class="searchBtn" type="submit">
                         <img src="/css/icons/search.png" alt="search icon">
@@ -43,31 +45,47 @@
             <div class="productPage container">
             <div class="accountCtn">
                     <div class="profileInformation">
-                <% admin.forEach(function(admin) { %>
-                        <form action="/updateAdminProfile/<%= admin._id %>" method="POST">
+                        <form action="/updateAdminProfile/<%= admin._id %>" method="POST" enctype="multipart/form-data">
                             <p class="editProfile">Update Your Profile</p>
+                            
                             <div class="profileInfo">
-                                <div class="profileInfoSectionOne">
-                                    <div>
-                                        <label for="">First Name</label>
-                                        <input type="text" name="firstname" value="<%= admin.firstname %>">
+                                <div class="profile-container">
+                                    <div class="profile-picture" id="profilePictureContainer">
+                                        <img id="profilePicture" src="<%= admin.imageURL %>" alt="Profile Picture">
                                     </div>
-                                    <div>
-                                        <label for="">Email Address</label>
-                                        <input type="text" name="email" value="<%= admin.email %>">
-                                    </div>
+                                    <input type="file" id="profilePictureInput" name="image" accept="image/*">
                                 </div>
 
-                                <div class="profileInfoSectionTwo">
-                                    <div>
-                                        <label for="">Username</label>
-                                        <input type="text" name="username" value="<%= admin.username %>">
+                                <div class="profileDetails">
+                                    <div class="profileSecCtn">
+                                        <div class="profileInfoSectionOne">
+                                            <div>
+                                                <label for="">First Name</label>
+                                                <input type="text" name="firstname" value="<%= admin.firstname %>">
+                                            </div>
+                                            <div>
+                                                <label for="">Username</label>
+                                                <input type="text" name="username" value="<%= admin.username %>">
+                                            </div>
+                                        </div>
+        
+                                        <div class="profileInfoSectionTwo">
+                                            <div>
+                                                <label for="">Last Name</label>
+                                                <input type="text" name="lastname" value="<%= admin.lastname %>">
+                                            </div>
+                                            <div>
+                                                <label for="">Email Address</label>
+                                                <input type="text" name="email" value="<%= admin.email %>">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
+                                    <div style="display: flex; flex-direction: column;">
                                         <label for="">Residential Address</label>
-                                        <input type="text" name="address" value="" >
+                                        <input type="text" name="address" value="<%= admin.address %>" >
                                     </div>
                                 </div>
+                                
                             </div>
                             
                             <div class="passwordChange">
@@ -81,8 +99,6 @@
                                 <button class="saveChangesBtn">Save Changes</button>
                             </div>
                         </form>
-                <% }); %>
-
                     </div>
             </div>
             </div>

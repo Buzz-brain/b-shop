@@ -1,5 +1,5 @@
 main {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .cartContainer {
@@ -55,29 +55,26 @@ main {
     border-radius: 7px;
     box-shadow: 1px 1px 10px rgba(189, 185, 185, 0.671);
     padding: 0 40px;
+    font-size: 1rem;
 }
 .cartTitle {
     height: 80px;
     margin-bottom: 30px;
-    
 }
 .cartProduct {
     height: 110px;
     margin-bottom: 30px;
-    
 }
 .cartTitle p {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1em;
 }
 .cartProductTitle {
     width: 35%;
     text-align: left;
-    
 }
 .cartPriceTitle, .cartQuantitytTitle, .cartSubtotalTitle {
     width: 15%;
-    
 }
 #quantity {
     position: relative;
@@ -211,6 +208,7 @@ main {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 .couponCodeCtn {
@@ -296,3 +294,29 @@ main {
 .removeCartItemBtn:hover {
     background-color: rgba(255, 68, 0, 0.815);
 }
+
+@media (max-width:768px) {
+    .cartContainer {
+        width: 90%;
+        margin: auto;
+    }
+    .cartImage p {
+        display: none;
+    }
+    .cartTitle p {
+        font-size: .9em;
+    }
+    .couponCartTotalCtn {
+        flex-direction: column;
+    }
+    .cartTitle, .cartProduct {
+        padding: 0 20px;
+    }
+    .cartProductTitle, .cartImage {
+        width: 40%;
+    }
+    .cartPriceTitle, .cartQuantitytTitle, .cartSubtotalTitle, .quantityCtn, #price, #subtotal {
+        width: 30%;
+    }
+}
+

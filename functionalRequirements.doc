@@ -1,49 +1,43 @@
-# ---------  NODEMAILER  ----------
-# Send an email message after a user adds a product to cart or wishlist
-# Send an email message after a user sends a contact message
-# To validate user registeration
-# To authenticate user during forget password
+NOW IMPLEMENTATIONS
 
-
-# ---------  PAYSTACK  ------------ 
-# For payment of products purchased
+Nothing
 
 
 
 
-# HOME:
-Add B-shop logo to user side
 
-# ABOUT:
-Page on 404, create design for Page
-
-# CONTACT: 
-Add nodemailer to send email message (pending)
-
-# ACCOUNT:  
-Add email verification to this user profile changes (password most importantly) using Node Mailer (pending)
-
-# ORDER/CHECKOUT: 
-Implement a payment system
+FUTURE IMPLEMENTATIONS
+- Make sure to include four pictures of the same product
+- View product modal for admin
+- Use ajax for admin
+- Add item in wishlist to cart one at a time - Wishlist page
+- Forget password functionality
+- Change password by email verification - Account page
+- Send email notifications (adds a product to cart or wishlist, sends a contact message)
+- Design an about page
+- Handle all payment transacts with paystack or similar third party...
+- if user not filled billing details don't place order
+- Google authentication
+- Registering with email verification
 
 
 
 
 
 
-DONE
-Create modal for product detail, link shop now - Home page
-Show registered user's name - Account page
-When user click on the account route, If cookies is set render the account page else redirect to the login page - Account page
-Create reguser auth function to restrict access to route if not logged in - General
-Implemet move all to cart - Wishlist
-Link proceed to checkout and return to shop - Cart
-Complete design and align columns well - Cart
-Make the jumbotron change it's background with respect to time - Home
-User should be able to edit firstname, lastname, email and residential address - Account
-Product image should not have background, use multer and cloudinary - Product
-Create modal for product detail - Product
-Link all pages on page - Account
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

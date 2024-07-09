@@ -9,12 +9,17 @@
 </head>
 <body>
     <div id="message"></div>
+    <div id="loader" class="loader-container">
+        <img src="/images/bshoplogoWhite.png"  style="position:absolute; z-index: 5;" width="200px" alt="Logo" class="">
+        <div class="rotate" >
+        </div>
+    </div>
     <main class="container flex-center">
         <div class="logo flex-center">
-            <img src="/css/icons/logohere.png" alt="logo image">
+            <img src="/images/bshoplogo.png" alt="logo image">
         </div>
         <div class="flex">
-            <form action="/login" method="post" name="form">
+            <form action="/login" method="post" name="form" novalidate>
                 <h1>Welcome Back!</h1>
                 <!-- <a href="/"><div class="signUpWithGoogle">
                     <img src="/socialIcons/google.png" class="goggleIcon" alt="google icon">
@@ -32,8 +37,9 @@
                     <input type="password" class="input" placeholder="Password" name="password">
                 </div>
                 <div class="forgetpwd flex">
-                    <p>Keep me logged in</p>
-                    <p>Forget password?</p>
+                    <p><input name="checkbox" class="keepMeLoggedIn" type="checkbox">
+                    Keep me logged in</p>
+                    <!-- <p>Forget password?</p> -->
                 </div>
                 <button type="submit">Login</button>
                 <p class="haveAccount">Don't have an account? <a href="/signup">Sign Up</a></p>

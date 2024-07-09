@@ -14,16 +14,13 @@
     position: relative;
 } */
 .jumbotron {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     margin-top: 20px;
     height: 75vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 30px;
-    padding: 0 150px;
+    padding: 0 100px;
     position: relative;
 }
 .jumbotron.first {
@@ -33,7 +30,8 @@
     background-color: black;
 }
 .jumbotron.third {
-    background-color: rgb(255, 136, 0);
+    background-color: rgb(55, 55, 212);
+    background-color: darkblue;
 }
 .border {
     border: 1px solid red;
@@ -41,14 +39,9 @@
 
 .jumbotron p {
     color: white;
-    font-size: 3rem;
-    letter-spacing: 2px;
+    font-size: 2.5rem;
 }
-.jumbotron p:nth-child(2) {
-    font-size: 3.3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+
 .jumbotron button{
     padding: 1em;
     display: flex;
@@ -60,56 +53,27 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
 }
 .jumbotron button img{
     margin-right: 10px;
 }
 .jumbotronText {
-    width: 45%;
+    width: 50%;
+    font-size: 1rem;
 }
 .jumbotronImages{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 45%;
+    height: 100%;
     position: relative;
-    height: 320px;
-    /* border: 1px solid red; */
 }
 .jumbotronImages img{
-    width: 200px;
+    width: 450px;
     position: absolute;
     z-index: 1;
-}
-.image1 {
-    transform: rotate(-30deg);
-    top: 35px;
-    left: 20px;
-}
-.image2{
-    transform: rotate(-15deg);
-    top: 35px;
-    right: 0px;
-}
-.circle {
-    box-shadow: 1px 1px 20px black;
-    height: 55px;
-    width: 100%;
-    position: absolute;
+    right: 0;
     bottom: 0;
-    border-radius: 50%;
-    
 }
-.circle2 {
-    background-color: rgba(75, 74, 74, 0.404);
-    height: 35px;
-    width: 90%;
-    position: absolute;
-    bottom: 10px;
-    border-radius: 50%;
-    margin-left: 5%;
-}
+
 .dotCtn {
     position: absolute;
     bottom: 35px;
@@ -217,7 +181,7 @@ main {
     font-size: 1rem;
     font-weight: 600;
 }
-.brandName {
+.categoryName {
     font-size: .9rem;
     color: rgb(146, 146, 146);
     font-weight: 700;
@@ -342,6 +306,35 @@ main {
     background: white;
 }
 /* Jumbotron Styling Ends */
-
-
-/* 0141791282 */
+@media (max-width:1200px) {
+    .jumbotronImages {
+        width: 30%;
+    }
+    .jumbotronText {
+        width: 40%;
+        font-size: .8rem;
+    }
+    .jumbotron {
+        padding: 0 40px;
+        height: 60vh;
+    }
+    .seeProducts {
+        left: 32%;
+    }
+}
+@media (max-width:768px) {
+    .jumbotronImages {
+        display: none;
+    }
+    .jumbotronText {
+        width: 100%;
+        font-size: .8rem;
+    }
+    .jumbotron {
+        padding: 0 40px;
+        height: 60vh;
+    }
+    .seeProducts {
+        left: 32%;
+    }
+}

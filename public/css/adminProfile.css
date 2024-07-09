@@ -1,3 +1,4 @@
+
 .profileInformation  {
     border: 1px solid rgba(156, 156, 156, 0.342);
     width: 100%;
@@ -8,27 +9,26 @@
     font-size: 1.4rem;
     font-weight: 500;
     color: orangered;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-.profileInfoSectionOne div {
+.profileInfoSectionOne div, .profileInfoSectionTwo div {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
 }
-.profileInfoSectionTwo div {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.profileDetails {
+    width: 70%;
 }
+
 .profileInfo {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
 }
-.profileInfoSectionOne{
-    width: 48%;
-}
-.profileInfoSectionTwo{
-    width: 48%;
+.profileInfoSectionOne, .profileInfoSectionTwo{
+    width: 50%;
+    height: 100%;
 }
 label {
     margin-bottom: 10px;
@@ -42,6 +42,7 @@ label {
     border: none;
     border-radius: 7px;
     font-size: .9rem;
+    margin-bottom: 10px;
 }
 .profileInformation input:focus {
     outline: 1px solid orangered;
@@ -52,6 +53,7 @@ label {
 }
 .passwordChange input{
     margin-bottom: 15px;
+    width: 50%;
 }
 .profileButtons {
     display: flex;
@@ -86,6 +88,59 @@ label {
 }
 
 
+
+
+
+
+
+.profile-container {
+    text-align: center;
+    width: 30%;
+}
+
+.profile-picture {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 3px solid rgba(128, 128, 128, 0.479);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#profilePictureInput {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    background-color: rgba(156, 156, 156, 0.205);
+    border-radius: 7px;
+    font-size: .9rem;
+}
+
+#uploadButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#uploadButton:hover {
+    background-color: #0056b3;
+}
+
+.profileSecCtn {
+    display: flex;
+    gap: 20px;
+}
+
 @media (max-width:768px) {
     .profileInfo {
         flex-direction: column;
@@ -96,9 +151,22 @@ label {
     .profileInfoSectionTwo{
         width: 100%;
     }
+    .profileSecCtn {
+        flex-direction: column;
+    }
+    .profileDetails {
+        width: 100%;
+    }
+    .profileInformation  {
+        padding: 35px 25px;
+    }
+    .profile-container {
+        width: 100%;
+    }
+    .editProfile {
+        text-align: center;
+    }
 } 
-@media (max-width:1200px) {
 
-}
 
 

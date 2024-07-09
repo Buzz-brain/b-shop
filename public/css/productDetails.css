@@ -56,7 +56,6 @@
     "imageThree imageFour imageFour imageFour";
     grid-column-gap: 25px;
     grid-row-gap: 10px;
-
 }
 .imageOne, .imageTwo, .imageThree {
     height: 100px;
@@ -116,7 +115,7 @@
     font-size: 1.1rem;
     font-weight: 600;
 }
-.brandNameModal {
+.categoryNameModal {
     font-size: 1.3rem;
     color: rgb(146, 146, 146);
     font-weight: 700;
@@ -224,3 +223,12 @@
 
 
 
+@media (max-width:768px) {
+    .modal-content {
+        flex-direction: column;
+        padding: 25px;
+    }
+    .productImageCtnModal, .productDescCtnModal {
+        width: 100%;
+    }
+}

@@ -1,5 +1,8 @@
+main {
+    padding-bottom: 60px;
+}
 .productPage {
-    margin-top: 35px;
+    margin-top: 20px;
     position: relative;
 }
 .productMenu {
@@ -7,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 1.3rem;
     font-weight: 500;
 }
@@ -19,6 +22,48 @@
     margin-left: 5px;
 }
 
+
+.profile-container {
+    text-align: center;
+}
+
+.profile-picture {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 3px solid rgba(128, 128, 128, 0.479);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#profilePictureInput {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    background-color: rgba(156, 156, 156, 0.205);
+    border-radius: 7px;
+    font-size: .9rem;
+}
+
+#uploadButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#uploadButton:hover {
+    background-color: #0056b3;
+}
 
 
 
@@ -73,7 +118,7 @@
     font-size: 1.4rem;
     font-weight: 500;
     color: orangered;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .profileInfoSectionOne div {
     display: flex;
@@ -88,12 +133,24 @@
 .profileInfo {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
 }
 .profileInfoSectionOne{
-    width: 48%;
+    width: 47%;
 }
 .profileInfoSectionTwo{
-    width: 48%;
+    width: 47%;
+}
+.profile-container {
+    width: 35%;
+}
+.profileInput {
+    width: 70%;
+}
+.nameInput {
+    display: flex;
+    justify-content: space-between;
 }
 label {
     margin-bottom: 10px;
@@ -144,4 +201,42 @@ label {
 .saveChangesBtn:hover {
     background-color: white;
     color: orangered;
+}
+
+
+@media (max-width:768px) {
+    .accountMenu {
+        display: none;
+    }
+    .profileInformation  {
+        width: 100%;
+        padding: 40px 40px;
+    }
+    .productMenu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .accountCtn {
+        margin-top: 40px;
+    }
+    .profileInfo {
+        flex-direction: column;
+    }
+
+    .profile-container {
+        width: 100%;
+    }
+    .profileInput {
+        width: 100%;
+    }
+    .nameInput {
+        flex-direction: column;
+    } 
+    .profileInfoSectionOne{
+        width: 100%;
+    }
+    .profileInfoSectionTwo{
+        width: 100%;
+    } 
 }

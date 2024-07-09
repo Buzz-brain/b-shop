@@ -13,10 +13,7 @@ form.onsubmit = (e) => {
             contactMessage.innerHTML = "Message sent succesfully"
             contactMessage.style.transform = "translate(0%)";
             contactMessage.style.color = " green"
-            setTimeout(() => {
-                alert("You will surely receive a feedback from us")
-                form.submit()
-            }, 2000)
+            form.submit()
         }
     removecontactMessage();
 }

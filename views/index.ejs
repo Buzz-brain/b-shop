@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/productDetails.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script defer src="script/script.js"></script>
+    <script defer src="/script/productDetails.js"></script>
     <script defer src="https://js.paystack.co/v1/inline.js"></script>
+    <script defer src="script/script.js"></script>
 </head>
 <body>
     <header>
         <div class="firstHeader container flex">
             <div class="logo">
-                <img src="/css/icons/logohere.png" alt="logo image">
+                <img src="/images/bshoplogo.png" alt="logo image">
             </div>
 
             <form action="/searchProducts" method="POST" class="searchCtn">
@@ -70,67 +72,71 @@
 
         <!-- Image slider start -->
         <div class="container">
-    <div class="slider">
-        <div class="slides">
-            <!-- radio buttons start -->
-            <input type="radio" name="radio-btn" id="radio1" checked>
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <!-- radio buttons end -->
+            <div class="slider">
+                <div class="slides">
+                    <!-- radio buttons start -->
+                    <input type="radio" name="radio-btn" id="radio1" checked>
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <!-- radio buttons end -->
 
-            <!-- slide images start -->
-            <!-- First Bg Image starts-->
-            <div class="jumbotron slide first">
-                <div class="jumbotronText">
-                    <p>New Year Sale Offer 2024</p>
-                    <p>20% OFF</p>
-                    <a href="/products"><button><img src="/css/icons/shopping-cart (1).png" alt="">Shop now &LongRightArrow;</button></a>
-                </div>
-                <div class="jumbotronImages">
-                    <img src="/products/shoeBg.jpeg" width="150px" alt="">
-                </div>
-            </div>
-            <!-- First Bg Image ends-->
-            <div class="jumbotron slide second">
-                <div class="jumbotronText">
-                    <p>New Year Sale Offer 2024</p>
-                    <p>20% OFF</p>
-                    <a href="/products"><button><img src="/css/icons/shopping-cart (1).png" alt="">Shop now &LongRightArrow;</button></a>
-                </div>
-                <div class="jumbotronImages">
-                    <img src="/products/manLaughing.jpeg" width="300px" alt="">
-                </div>
-            </div>
-            <div class="jumbotron slide third">
-                <div class="jumbotronText">
-                    <p>New Year Sale Offer 2024</p>
-                    <p>20% OFF</p>
-                    <a href="/products"><button><img src="/css/icons/shopping-cart (1).png" alt="">Shop now &LongRightArrow;</button></a>
-                </div>
-                <div class="jumbotronImages">
-                    <img src="/products/shoeBg2.png" width="1000px" alt="">
-                </div>
-            </div>
-            <!-- slide images end -->
+                    <!-- slide images start -->
+                    <!-- First Bg Image starts-->
+                    <div class="jumbotron slide first">
+                        <div class="jumbotronText">
+                            <p class="mainText" style="font-size: 2.8em; font-weight: bold; margin-bottom: 10px;">Unleash the Best Deals of the Season!</p>
+                            <p class="subText" style="font-size: 1.5em;
+                            margin-bottom: 20px;">Buy One, Get One Free</p>
+                            <a href="/products"><button><img src="/css/icons/shopping-cart (1).png" alt="">Shop now &LongRightArrow;</button></a>
+                        </div>
+                        <div class="jumbotronImages">
+                            <img src="/products/announceBg.png" style="width: 450px" alt="">
+                        </div>
+                    </div>
+                    <!-- First Bg Image ends-->
+                    <div class="jumbotron slide second">
+                        <div class="jumbotronText">
+                            <p style="font-size: 2.2em; letter-spacing: 2px;">New Year Sale Offer 2024</p>
+                            <p style="font-size: 3.5em; font-weight: bold; letter-spacing: 1px;">Extra 20% Off</p>
+                            <p style="font-size: 1.2em; margin-bottom: 20px; letter-spacing: 1px;">Free Shipping on all orders</p>
 
-            <!-- automatic navigation start-->
-            <div class="navigation-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
+                            <a href="/products"><button><img src="/css/icons/shopping-cart (1).png" alt="">Shop now &LongRightArrow;</button></a>
+                        </div>
+                        <div class="jumbotronImages">
+                            <img src="/products/shoeBg.jpeg" style="width: 300px" alt="">
+                        </div>
+                    </div>
+
+                    <div class="jumbotron slide third">
+                        <div class="jumbotronText">
+                            <p style="font-size: 2.5em; margin-bottom: 10px;">Exclusive Discounts on Top-Selling Products</p>
+                            <p style="font-size: 3em; font-weight: bold; margin-bottom: 20px;">Limited Time Offer!</p>
+                            <a href="/products"><button><img src="/css/icons/shopping-cart (1).png" alt="">Shop now &LongRightArrow;</button></a>
+                        </div>
+                        <div class="jumbotronImages">
+                            <img src="/products/bshopBackg.png" style="width: 350px" alt="">
+                        </div>
+                    </div>
+                    <!-- slide images end -->
+
+                    <!-- automatic navigation start-->
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                    </div>
+                    <!-- automatic navigation end-->
+                
+                    <!-- manual navigation starts-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                    </div>
+                    <!-- automatic navigation end-->
+                </div>
             </div>
-            <!-- automatic navigation end-->
-        
-            <!-- manual navigation starts-->
-            <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-            </div>
-            <!-- automatic navigation end-->
         </div>
-    </div>
-</div>
     <!-- Image slider start -->
         
         <div class="productPage container">
@@ -141,6 +147,36 @@
                     <div><img src="/css/icons/greater-than-symbol.png" alt=""></div>
                 </div> -->
             </div>
+            <div id="productModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="productImageCtnModal">
+                        <div class="imageOne">
+                            <img src="" alt=""></div>
+                        <div class="imageTwo">
+                            <img src="" alt=""></div>
+                        <div class="imageThree">
+                            <img src="" alt=""></div>
+                        <div class="imageFour">
+                            <img id="productImageModal" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="productDescCtnModal">
+                        <h2 class="productNameModal"></h2>
+                    <p class="categoryNameModal"></p>
+                    <div class="ratingCtnModal">
+                        <img src="/css/icons/star.png" alt="rating icon"> 
+                        <p class="ratingModal"></p>
+                    </div>
+                    <div class="priceCtnModal">
+                        $<p class="delPriceModal"><del></del></p>
+                        $<p class="priceModal"></p>
+                    </div>
+                    <div class="productDescModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem incidunt ducimus ratione dolorum asperiores assumenda enim quidem aliquam, qupiditate sunt!</div>
+                </div>
+                </div>
+            </div>
              <div class="productsSection">
                 <% products.forEach(function(products) { %>
                     <div id="productsSection" class="productsSection">
@@ -150,11 +186,9 @@
                                     <div class="binCtn wishlistBtn" id="wishlistBtn" data-id="<%= products._id %>">
                                         <img src="/css/icons/wishlist.png" alt="">
                                     </div>
-                                    <a href="/productDetails/<%= products._id %>">
-                                        <div class="binCtn">
+                                        <div id="viewDetailsBtn" class="binCtn view">
                                             <img src="/css/icons/viewBlack.png" alt="">
                                         </div>
-                                    </a>
                                 </div>
                                 <div class="productImg">
                                     <img class="product-img" src="<%=products.imageURL%>" alt="">
@@ -163,7 +197,7 @@
                 
                             <div class="productCtnTwo">
                                 <p class="productName"><%=products.productName%></p>
-                                <p class="brandName"><%=products.brandName%></p>
+                                <p class="categoryName"><%=products.category%></p>
                                 <div class="ratingCtn">
                                     <img src="/css/icons/star.png" alt="rating icon"> 
                                     <p class="rating"><%=products.rating%></p>
@@ -205,6 +239,7 @@
         <div id="cartTotal"></div>
         <div id="shippingPrice"></div>
     <div class="moveAllToCartBtn"></div>
+    <div class="close"></div>
 
     </div>
 </body>

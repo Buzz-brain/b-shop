@@ -12,7 +12,7 @@
     <header>
         <div class="firstHeader container flex">
             <div class="logo">
-                <img src="/images/logohere.png" alt="logo image">
+                <img src="/images/bshoplogo.png" alt="logo image">
             </div>
             <form action="/searchforproducts" method="POST" class="searchCtn">
                 <button class="searchBtn" type="submit">
@@ -63,7 +63,12 @@
     <main>
         <div class="productPage container">
             <div class="productMenu">
-                <p class="productText">Home / My Account</p>
+                <div style="width: 190px">
+                    <ul style="display: flex; font-size: 1.2rem; justify-content: space-between; list-style-type: none;">
+                        <a href="/"><li>Home </li></a> / 
+                        <a href="/account" class="active"><li> My Account</li></a>
+                    </ul>
+                </div>
                 <p class="welcome">Welcome <span><%= user.username %> </span></p>
             </div>
 
@@ -90,28 +95,45 @@
                 </div>
 
                 <div class="profileInformation">
-                    <form action="/update/<%= user._id %>" method="POST">
+                    <form action="/update/<%= user._id %>" method="POST" enctype="multipart/form-data">
                         <p class="editProfile">Edit Your Profile</p>
                         <div class="profileInfo">
-                            <div class="profileInfoSectionOne">
-                                <div>
-                                    <label for="">First Name</label>
-                                    <input type="text" value="<%= user.firstname %>" name="firstname">
+                            <div class="profile-container">
+                                <div class="profile-picture" id="profilePictureContainer">
+                                    <img id="profilePicture" src="<%= user.imageURL %>" alt="Profile Picture">
                                 </div>
-                                <div>
-                                    <label for="">Email Address</label>
-                                    <input type="text" value="<%= user.email %>" name="email">
-                                </div>
+                                <input type="file" id="profilePictureInput" name="image" accept="image/*">
                             </div>
 
-                            <div class="profileInfoSectionTwo">
-                                <div>
-                                    <label for="">Last Name</label>
-                                    <input type="text" value="<%= user.lastname %>" name="lastname">
+
+                            <div class="profileInput" >
+                                <div class="nameInput">
+                                    <div class="profileInfoSectionOne">
+                                        <div>
+                                            <label for="">First Name</label>
+                                            <input type="text" value="<%= user.firstname %>" name="firstname">
+                                        </div>
+                                        <div>
+                                            <label for="">Username</label>
+                                            <input type="text" value="<%= user.username %>" name="username">
+                                        </div>
+                                    </div>
+                                <!-- Lastname and  -->
+                                    <div class="profileInfoSectionTwo">
+                                        <div>
+                                            <label for="">Last Name</label>
+                                            <input type="text" value="<%= user.lastname %>" name="lastname">
+                                        </div>
+                                        <div>
+                                            <label for="">Email Address</label>
+                                            <input type="text" name="email" value="<%= user.email %>" >
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label for="">Residential Address</label>
-                                    <input type="text" name="address" value="<%= user.address %>" >
+                                <!-- Residential Address -->
+                                <div style="display: flex; flex-direction: column;">
+                                    <label for="" style="margin-bottom: 10px;">Residential Address</label>
+                                    <input type="text" style="width: 100%" name="address" value="<%= user.address %>" >
                                 </div>
                             </div>
                         </div>
@@ -123,7 +145,7 @@
                             <input type="text" placeholder="Confirm Password" name="cPassword">
                         </div>
                         <div class="profileButtons">
-                            <button class="cancelBtn">Cancel</button>
+                            <!-- <button class="cancelBtn">Cancel</button> -->
                             <button class="saveChangesBtn">Save Changes</button>
                         </div>
                     </form>
@@ -140,8 +162,8 @@
         <div id="Total"></div>
         <div id="cartTotal"></div>
         <div id="shippingPrice"></div>
-    <div class="moveAllToCartBtn"></div>
-
+        <div class="moveAllToCartBtn"></div>
+        <div class="close"></div>
     </div>
 </body>
 </html>

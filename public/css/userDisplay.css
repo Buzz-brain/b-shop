@@ -13,6 +13,7 @@ body {
     width: 90%;
     margin: auto;
 }
+
 .overlay {
     width:20%; 
     background-color: orangered; 
@@ -40,6 +41,16 @@ body {
     width: 100%;
     font-size: 1.2rem;
 }
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.logo img {
+    width: 150px;
+    margin-top: 25px;
+}
 header {
     width: 100%; 
     height: 80px;
@@ -55,6 +66,14 @@ header .container {
     justify-content: space-between; 
     align-items: center;
     height: 100%;
+}
+#close {
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+    display: none;
 }
 header form {
     display: flex;
@@ -319,7 +338,7 @@ a {
     font-size: 1rem;
     font-weight: 600;
 }
-.brandName {
+.categoryName {
     font-size: .9rem;
     color: rgb(146, 146, 146);
     font-weight: 700;
@@ -432,6 +451,10 @@ a {
 #editBtn:hover, #deleteBtn:hover, #viewBtn:hover {
     box-shadow: none;
 }
+.wrapper {
+    width: 80%;
+    position: relative;
+}
 /* #editBtn {
     background-color: green;
     border: 1px solid green;
@@ -444,7 +467,35 @@ a {
     background-color: red;
     border: 1px solid red;
 } */
+.profile-container {
+    text-align: center;
+    width: 30%;
+}
 
+.profile-picture {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 3px solid rgba(128, 128, 128, 0.479);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#profilePictureInput {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    background-color: rgba(156, 156, 156, 0.205);
+    border-radius: 7px;
+    font-size: .9rem;
+}
 
 /* #message {
     position: fixed;
@@ -461,5 +512,25 @@ a {
     align-items: center;
 } */
 
-
+@media (max-width:768px) {
+    .overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        /* display: none; */
+        width: 40%; 
+    }
+    main, header {
+        margin-left: 0;
+    }
+    #close {
+        display: flex;
+    }
+    .wrapper {
+        width: 100%;
+    }
+    .container > h2 {
+        font-size: 1rem;
+    }
+}
 

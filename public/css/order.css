@@ -2,7 +2,7 @@
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 9999; /* Sit on top */
+    z-index: 10; 
     left: 0;
     top: 0;
     width: 100%;
@@ -14,12 +14,13 @@
   
   /* Modal Content/Box */
   .modal-content {
+    z-index: 11; 
     gap: 50px;
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 50px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -116,7 +117,7 @@
     font-size: 1.1rem;
     font-weight: 600;
 }
-.brandNameModal {
+.categoryNameModal {
     font-size: 1.3rem;
     color: rgb(146, 146, 146);
     font-weight: 700;

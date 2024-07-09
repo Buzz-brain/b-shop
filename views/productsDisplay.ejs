@@ -6,27 +6,29 @@
     <title>Home page</title>
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/products.css">
-    <!-- <script defer src="/script/productsDisplay.js"></script> -->
+    <link rel="stylesheet" href="/css/userDisplay.css">
+    <script defer src="/script/admin.js"></script>
 </head>
 <body>
     <div class="overlay">
-        <div>
-            <p>B-Sh<img style="margin-right: 3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        <div class="logo">
+            <span id="close">x</span>
+            <img src="/images/bshopLogoWhite.png" alt="">
         </div>
         <ul>
             <a href="/users"><li><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
             <a href="/adminProfile"><li><img src="/css/icons/user.png" alt="">Profile</li></a>
             <a href="/productsDisplay"><li class="active"><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+            <form action="/admin/logout">
+                <button type="submit"><li><img src="/css/icons/logout.png" alt="">Log Out</li></button>
+            </form>
         </ul>
     </div>
     
-
-    <div style="width: 80%;">
+    <div class="wrapper">
         <header>
             <div class="container">
-                <% admin.forEach(function(admin) { %>
-                    <h2>Welcome, Admin <%= admin.username %></h2>
-                <% }); %>
+                <h2>Welcome, Admin <%= admin.username %></h2>
                 <form action="/admin/searchProduct" method="POST" class="search">
                     <button class="searchBtn" type="submit">
                         <img src="/css/icons/search.png" alt="search icon">
@@ -61,7 +63,7 @@
                         
                                     <div class="productCtnTwo">
                                         <p class="productName"><%=products.productName%></p>
-                                        <p class="brandName"><%=products.brandName%></p>
+                                        <p class="category"><%=products.category%></p>
                                         <div class="ratingCtn">
                                             <img src="/css/icons/star.png" alt="rating icon"> 
                                             <p class="rating"><%=products.rating%></p>
@@ -74,9 +76,9 @@
                                             <div class="editBtnCtn">
                                                 <a href="/editProduct/<%= products._id %>"><button id="editBtn"><img src="/css/icons/edit.png" alt=""></button></a>
                                             </div>
-                                            <div class="viewBtnCtn">
+                                            <!-- <div class="viewBtnCtn">
                                                 <a href="/viewProductDetails/<%= products._id %>"><button id="viewBtn"><img src="css/icons/view.png" alt=""></button></a>
-                                            </div>
+                                            </div> -->
                                             <div class="deleteBtnCtn">
                                                 <form action="/deleteProduct/<%= products._id %>" method="POST">
                                                     <button type="submit" class="btn btn-danger" id="deleteBtn"><img src="/css/icons/delete.png" alt=""></button>

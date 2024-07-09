@@ -14,7 +14,7 @@
     <header>
         <div class="firstHeader container flex">
             <div class="logo">
-                <img src="/css/icons/logohere.png" alt="logo image">
+                <img src="/images/bshoplogo.png" alt="logo image">
             </div>
             <form action="/searchforproducts" method="POST" class="searchCtn">
                 <button class="searchBtn" type="submit">
@@ -89,9 +89,10 @@
                             <img id="productImageModal" src="" alt="">
                         </div>
                     </div>
+                    
                     <div class="productDescCtnModal">
                         <h2 class="productNameModal"></h2>
-                    <p class="brandNameModal"></p>
+                    <p class="categoryNameModal"></p>
                     <div class="ratingCtnModal">
                         <img src="/css/icons/star.png" alt="rating icon"> 
                         <p class="ratingModal"></p>
@@ -101,9 +102,9 @@
                         $<p class="priceModal"></p>
                     </div>
                     <div class="productDescModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem incidunt ducimus ratione dolorum asperiores assumenda enim quidem aliquam, qupiditate sunt!</div>
-                    <hr>
+                    <!-- <hr> -->
     
-                    <div class="productAmountCtnModal">
+                    <!-- <div class="productAmountCtnModal">
                         <div class="productAmountModal">
                             <button class="decreaseBtnModal">-</button>
                             <input type="text" value="1">
@@ -111,7 +112,7 @@
                         </div>
                         <button class="buyNowModal">Buy Now</button>
                         <button class="wishlistBtnModal"><img src="/css/icons/wishlist.png" alt=""></button>
-                    </div>
+                    </div> -->
                 </div>
                 </div>
             </div>
@@ -126,11 +127,9 @@
                                     <div class="binCtn wishlistBtn" id="wishlistBtn" data-id="<%= products._id %>">
                                         <img src="/css/icons/wishlist.png" alt="">
                                     </div>
-                                    <!-- <a href="/productDetails/<%= products._id %>"> -->
                                         <div id="viewDetailsBtn" class="binCtn view">
                                             <img src="/css/icons/viewBlack.png" alt="">
                                         </div>
-                                    <!-- </a> -->
                                 </div>
                                 <div class="productImg">
                                     <img class="product-img" src="<%=products.imageURL%>" alt="">
@@ -139,7 +138,7 @@
                 
                             <div class="productCtnTwo">
                                 <p class="productName"><%=products.productName%></p>
-                                <p class="brandName"><%=products.brandName%></p>
+                                <p class="categoryName"><%=products.category%></p>
                                 <div class="ratingCtn">
                                     <img src="/css/icons/star.png" alt="rating icon"> 
                                     <p class="rating"><%=products.rating%></p>
@@ -169,6 +168,7 @@
         <div id="cartTotal"></div>
         <div id="shippingPrice"></div>
     <div class="moveAllToCartBtn"></div>
+    <div class="close"></div>
 
     </div>
 </body>

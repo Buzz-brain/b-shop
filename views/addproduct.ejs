@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/userDisplay.css">
 </head>
 <body>
     <div class="overlay">
-        <div>
-            <p>B-Sh<img style="margin-right: 3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        <div class="logo">
+            <span id="close">x</span>
+            <img src="/images/bshopLogoWhite.png" alt="">
         </div>
         <ul>
             <a href="/users"><li><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
             <a href="/adminProfile"><li><img src="/css/icons/user.png" alt="">Profile</li></a>
             <a href="/productsDisplay"><li class="active"><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+            <form action="/admin/logout">
+                <button type="submit"><li><img src="/css/icons/logout.png" alt="">Log Out</li></button>
+            </form>
         </ul>
     </div>
 
@@ -52,8 +57,8 @@
                             <input type="text" name="productName" id="productName">
                         </div>
                         <div>
-                            <label for="brandName">Brand Name</label>
-                            <input type="text" name="brandName" id="brandName">
+                            <label for="category">Category</label>
+                            <input type="text" name="category" id="category">
                         </div>
                         <div>
                             <label for="rating">Rating</label>

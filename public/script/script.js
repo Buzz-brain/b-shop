@@ -48,14 +48,14 @@ addToCartButtons.forEach(button => {
         const productContainer = event.target.closest('.productCtn');
         const productId = button.dataset.id;
         const productName = productContainer.querySelector('.productName').textContent;
-        const brandName = productContainer.querySelector('.brandName').textContent;
+        const categoryName = productContainer.querySelector('.categoryName').textContent;
         const rating = productContainer.querySelector('.rating').textContent;
         const price = parseFloat(productContainer.querySelector('.price').textContent);
         const delPrice = parseFloat(productContainer.querySelector('.delPrice').textContent);
         const productImg = productContainer.querySelector('.product-img').src;
         console.log(productImg)
         // Call the addToCart function with the product details
-        addToCart(productId, productName, brandName, rating, price, delPrice, productImg);
+        addToCart(productId, productName, categoryName, rating, price, delPrice, productImg);
     });
 });
 
@@ -67,21 +67,21 @@ addToWishlistButtons.forEach(button => {
         const productContainer = event.target.closest('.productCtn');
         const productId = button.dataset.id;
         const productName = productContainer.querySelector('.productName').textContent;
-        const brandName = productContainer.querySelector('.brandName').textContent;
+        const categoryName = productContainer.querySelector('.categoryName').textContent;
         const rating = productContainer.querySelector('.rating').textContent;
         const price = parseFloat(productContainer.querySelector('.price').textContent);
         const delPrice = parseFloat(productContainer.querySelector('.delPrice').textContent);
         const productImg = productContainer.querySelector('.product-img').src;
         console.log(productId)
         // Call the addToCart function with the product details
-        addToWishlist(productId, productName, brandName, rating, price, delPrice, productImg);
+        addToWishlist(productId, productName, categoryName, rating, price, delPrice, productImg);
     });
 });
 
 let cartItemNumber = 0;
 
 // Function to add item to cart
-function addToCart(productId, productName, brandName, rating, price, delPrice, productImg) {
+function addToCart(productId, productName, categoryName, rating, price, delPrice, productImg) {
     cartItemNumber++
     cartCount.textContent++
     message.style.transform = "translate(0%)";
@@ -94,7 +94,7 @@ function addToCart(productId, productName, brandName, rating, price, delPrice, p
         productId: productId,
         productImg: productImg,
         productName: productName,
-        brandName: brandName,
+        categoryName: categoryName,
         rating: rating,
         price: price,
         delPrice: delPrice,
@@ -122,14 +122,14 @@ function addToCart(productId, productName, brandName, rating, price, delPrice, p
 }
 
 // Function to add item to wishlist
-function addToWishlist(productId, productName, brandName, rating, price, delPrice, productImg) {
+function addToWishlist(productId, productName, categoryName, rating, price, delPrice, productImg) {
 
     // Example product object
     const product = {
         productId: productId,
         productImg: productImg,
         productName: productName,
-        brandName: brandName,
+        categoryName: categoryName,
         rating: rating,
         price: price,
         delPrice: delPrice,
@@ -179,12 +179,19 @@ function moveAllToCart() {
     // Retrieve cart items from local storage
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    // Add each wishlist item to cart
-    wishlistItems.forEach(item => {
-        // Add the item to the cart
-        cartItems.push(item);
-    });
-    console.log(cartItems)
+    console.log(wishlistItems)
+    if (wishlistItems.length === 0) {
+        message.style.transform = "translate(0%)";
+        message.style.color= "orangered";
+        message.innerHTML = "No product in wishlist"
+    } else{
+        // Add each wishlist item to cart
+        wishlistItems.forEach(item => {
+            if (!cartItems.find(cartItem => cartItem.id === item.id)) {
+                // If not, add it to the cart
+                cartItems.push(item);
+            }
+        });
 
     // Save updated cart items to local storage
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -198,6 +205,7 @@ function moveAllToCart() {
     message.style.transform = "translate(0%)";
     message.style.color= "orangered";
     message.innerHTML = "All wishlist items moved to cart successfully"
+}
     removeMessage()
 }
 
@@ -214,6 +222,15 @@ function updateCartUI() {
     // Clear previous cart items before updating
     cartContainer.innerHTML = "";
 
+    if (cartItems.length == 0) {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `<div style="text-align:center" class="wishlistEmpty">
+                                    <img width=280px" src="/images/cartEmpty.jpg" alt="">
+                                    <p class="emptyText">Your Cart is empty!</p>
+                                <div>`
+        cartContainer.appendChild(itemElement);
+    } else {
+
     // Loop through cart items and generate HTML for each item
     cartItems.forEach(item => {
         const itemElement = document.createElement('div');
@@ -221,7 +238,7 @@ function updateCartUI() {
         itemElement.innerHTML = `
         <div class="cartProduct">
             <div class="cartImage">
-                <img src="${item.productImg}" alt="product image">
+                <img style="cursor:pointer" title="${item.productName}" src="${item.productImg}" alt="product image">
                 <p>${item.productName}</p>
             </div>
             <p id="price">$${item.price}</p>
@@ -265,7 +282,7 @@ function updateCartUI() {
             adjustQuantity(productId, newQuantity);
         });
     })
-
+    }
     // Add event listener for remove buttons
     const removeButtons = document.querySelectorAll('.removeCartItemBtn');
     removeButtons.forEach(button => {
@@ -295,8 +312,9 @@ function updateWishlistUI() {
 
     if (wishlistItems.length == 0) {
         const itemElement = document.createElement('div');
-        itemElement.classList.add('wishlist-item');
-        itemElement.innerHTML = `<p class="wishlistEmpty">wishlist is empty</p>`
+        itemElement.innerHTML = `<div style="text-align:center" class="wishlistEmpty">
+        <img width=300px" src="/images/wishlistEmpty.png" alt=""><p class="emptyText">Your Wishlist is empty!</p>
+        <div>`
         wishlistContainer.appendChild(itemElement);
     } else {
         // // Clear previous cart items before updating
@@ -313,11 +331,9 @@ function updateWishlistUI() {
                     <div class="binCtn removeWishlistItemBtn" data-id="${item.productId}">
                         <img src="/css/icons/bin.png" alt="">
                     </div>
-                    <a href="/productDetails">
-                        <div class="binCtn">
-                            <img src="/css/icons/viewBlack.png" alt="">
-                        </div>
-                    </a>
+                    <div id="viewDetailsBtn" class="binCtn view">
+                                            <img src="/css/icons/viewBlack.png" alt="">
+                                        </div>
                 </div>
                 <div class="productImg">
                     <img class="product-img" src="${item.productImg}" alt="product image">
@@ -325,17 +341,14 @@ function updateWishlistUI() {
             </div>
             <div class="productCtnTwo">
                 <p class="productName">${item.productName}</p>
-                <p class="brandName">${item.brandName}</p>
+                <p class="categoryName">${item.categoryName}</p>
                 <div class="ratingCtn">
                     <img src="/css/icons/star.png" alt="rating icon"> 
                     <p class="rating">${item.rating}</p>
                 </div>
                 <div class="priceCtn">
-                    <p class="delPrice">$<del>${item.delPrice}</del></p>
-                    <p class="price">$${item.price}</p>
-                </div>
-                <div class="addToCartBtn" id="cartBtn" data-id="${item.productId}">
-                    <img src="/css/icons/plus.png" alt="">
+                $<del><p class="delPrice">${item.delPrice}</p></del>
+                    $<p class="price">${item.price}</p>
                 </div>
             </div>
         </div>`
@@ -352,24 +365,49 @@ function updateWishlistUI() {
         });
     });
 
-    // // Add event listener for remove buttons
-    // const addToCartButtons = document.querySelectorAll('.addToCartBtn');
-    // addToCartButtons.forEach(button => {
-    //     button.addEventListener('click', event => {
-    //         // Get product details from the clicked button or its container
-    //         const productContainer = event.target.closest('.productCtn');
-    //         const productId = button.dataset.id;
-    //         const productName = productContainer.querySelector('.productName').textContent;
-    //         const brandName = productContainer.querySelector('.brandName').textContent;
-    //         const rating = productContainer.querySelector('.rating').textContent;
-    //         const price = parseFloat(productContainer.querySelector('.price').textContent);
-    //         const delPrice = parseFloat(productContainer.querySelector('.delPrice').textContent);
-    //         const productImg = productContainer.querySelector('.product-img').src;
-    //         console.log(productImg)
-    //         // Call the addToCart function with the product details
-    //         addToCart(productId, productName, brandName, rating, price, delPrice, productImg);
-    //     });
-    // });
+   // Get the modal
+var modalwish = document.getElementById("productModal");
+
+// Get the button that opens the modal
+const viewDetailsBtn = document.querySelectorAll('#viewDetailsBtn');
+
+// Get the <span> element that closes the modal
+var spanwish = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+viewDetailsBtn.forEach(btn => {
+    btn.addEventListener('click', event => {
+    modalwish.style.display = "block";
+    const productContainer = event.target.closest('.productCtn');
+    const productName = productContainer.querySelector('.productName').textContent;
+    const categoryName = productContainer.querySelector('.categoryName').textContent;
+    const rating = productContainer.querySelector('.rating').textContent;
+    const price = parseFloat(productContainer.querySelector('.price').textContent);
+    const delPrice = parseFloat(productContainer.querySelector('.delPrice').textContent);
+    const productImg = productContainer.querySelector('.product-img').src;
+    // Populate modal with product details (you'll need to implement this)
+    // For example:
+    document.getElementById("productImageModal").src = productImg
+    document.getElementsByClassName("productNameModal")[0].innerText = productName
+    document.getElementsByClassName("categoryNameModal")[0].innerText = categoryName
+    document.getElementsByClassName("ratingModal")[0].innerText = rating
+    document.getElementsByClassName("delPriceModal")[0].innerText = delPrice
+    document.getElementsByClassName("priceModal")[0].innerText = price
+    })
+});
+
+// When the user clicks on <span> (x), close the modal
+spanwish.onclick = function() {
+  modalwish.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalwish) {
+    modalwish.style.display = "none";
+  }
+}
+
 }
 
 // Function to adjust the quantity of a product

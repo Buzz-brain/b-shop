@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/userDisplay.css">
 </head>
 <body>
     <div class="overlay">
-        <div>
-            <p>B-Sh<img style="margin-right:3px" src="/css/icons/shopping-cart (2).png" alt=""> p</p>
+        <div class="logo">
+            <span id="close">x</span>
+            <img src="/images/bshopLogoWhite.png" alt="">
         </div>
         <ul>
-            <a href="/users"><li><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
+            <a href="/users"><li class="active"><img src="/css/icons/man.png" width="30px" alt="">Users</li></a>
             <a href="/adminProfile"><li><img src="/css/icons/user.png" alt="">Profile</li></a>
-            <a href="/productsDisplay"><li class="active"><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+            <a href="/productsDisplay"><li><img src="/css/icons/shopping-cart (1).png" alt="">Products</li></a>
+            <form action="/admin/logout">
+                <button type="submit"><li><img src="/css/icons/logout.png" alt="">Log Out</li></button>
+            </form>
         </ul>
     </div>
 
@@ -40,11 +45,11 @@
             <div class="container">
                 <div class="menu">
                     <div>
-                        <a href="/"><p>Product</p></a><b>&gt;&nbsp;</b>
-                        <a href="/products"><p class="activeMenu">Edit Product</p></a>
+                        <a href="/productsDisplay"><p>Product</p></a><b>&gt;&nbsp;</b>
+                        <a href="#"><p class="activeMenu">Edit Product</p></a>
                     </div>
                 </div>
-                <form action="/updateProduct/<%= product._id %>" class="productInformation" method="POST">
+                <form action="/updateProduct/<%= product._id %>" class="productInformation" method="POST" enctype="multipart/form-data">
                     <p class="productDetail">Edit Product Detail</p>
                     <div class="productInfoSection">
                         <div>
@@ -52,8 +57,8 @@
                             <input type="text" name="productName" id="productName" value="<%= product.productName %>">
                         </div>
                         <div>
-                            <label for="brandName">Brand Name</label>
-                            <input type="text" name="brandName" value="<%= product.brandName %>" id="brandName">
+                            <label for="category">Category</label>
+                            <input type="text" name="category" value="<%= product.category%>" id="category">
                         </div>
                         <div>
                             <label for="rating">Rating</label>
@@ -68,8 +73,8 @@
                             <input type="text" name="currentPrice" value="<%= product.currentPrice %>" id="currentPrice">
                         </div>
                         <div>
-                            <label>Provide product image link</label>
-                            <input type="text" name="profileFile" value="<%= product.profileFile %>" required>
+                            <label>Provide product image</label>
+                            <input type="file" id = "productImage" name="image" accept="image/*">
                         </div>
                         <button type="submit" class="saveBtn">Save Changes</button>
                         <!-- <div>

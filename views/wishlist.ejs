@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/productDetails.css">
     <link rel="stylesheet" href="/css/wishlist.css">
     <script defer src="script/script.js"></script>
 </head>
@@ -12,7 +13,7 @@
     <header>
         <div class="firstHeader container flex">
             <div class="logo">
-                <img src="/css/icons/logohere.png" alt="logo image">
+                <img src="/images/bshoplogo.png" alt="logo image">
             </div>
             <form action="/searchforproducts" method="POST" class="searchCtn">
                 <button class="searchBtn" type="submit">
@@ -63,6 +64,47 @@
     </header>
     <main>
         <div id="message"></div>
+        <div id="productModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="productImageCtnModal">
+                    <div class="imageOne">
+                        <img src="" alt=""></div>
+                    <div class="imageTwo">
+                        <img src="" alt=""></div>
+                    <div class="imageThree">
+                        <img src="" alt=""></div>
+                    <div class="imageFour">
+                        <img id="productImageModal" src="" alt="">
+                    </div>
+                </div>
+                <div class="productDescCtnModal">
+                    <h2 class="productNameModal"></h2>
+                <p class="categoryNameModal"></p>
+                <div class="ratingCtnModal">
+                    <img src="/css/icons/star.png" alt="rating icon"> 
+                    <p class="ratingModal"></p>
+                </div>
+                <div class="priceCtnModal">
+                    $<p class="delPriceModal"><del></del></p>
+                    $<p class="priceModal"></p>
+                </div>
+                <div class="productDescModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem incidunt ducimus ratione dolorum asperiores assumenda enim quidem aliquam, qupiditate sunt!</div>
+                <!-- <hr> -->
+
+                <!-- <div class="productAmountCtnModal">
+                    <div class="productAmountModal">
+                        <button class="decreaseBtnModal">-</button>
+                        <input type="text" value="1">
+                        <button class="increaseBtnModal">+</button>
+                    </div>
+                    <button class="buyNowModal">Buy Now</button>
+                    <button class="wishlistBtnModal"><img src="/css/icons/wishlist.png" alt=""></button>
+                </div> -->
+            </div>
+            </div>
+        </div>
         <div class="productPage container">
             <div class="productMenu">
                 <p class="productText">Wishlist (<span id="wishlistCountTwo">0</span>)</p>
@@ -86,6 +128,8 @@
         <div id="cartTotal"></div>
         <div id="shippingPrice"></div>
     <div class="moveAllToCartBtn"></div>
+    <div class="close"></div>
+
     </div>
 </body>
 </html>

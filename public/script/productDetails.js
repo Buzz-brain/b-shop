@@ -13,7 +13,7 @@ viewDetailsBtn.forEach(btn => {
     modal.style.display = "block";
     const productContainer = event.target.closest('.productCtn');
     const productName = productContainer.querySelector('.productName').textContent;
-    const brandName = productContainer.querySelector('.brandName').textContent;
+    const categoryName = productContainer.querySelector('.categoryName').textContent;
     const rating = productContainer.querySelector('.rating').textContent;
     const price = parseFloat(productContainer.querySelector('.price').textContent);
     const delPrice = parseFloat(productContainer.querySelector('.delPrice').textContent);
@@ -22,7 +22,7 @@ viewDetailsBtn.forEach(btn => {
     // For example:
     document.getElementById("productImageModal").src = productImg
     document.getElementsByClassName("productNameModal")[0].innerText = productName
-    document.getElementsByClassName("brandNameModal")[0].innerText = brandName
+    document.getElementsByClassName("categoryNameModal")[0].innerText = categoryName
     document.getElementsByClassName("ratingModal")[0].innerText = rating
     document.getElementsByClassName("delPriceModal")[0].innerText = delPrice
     document.getElementsByClassName("priceModal")[0].innerText = price

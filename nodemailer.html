@@ -1,0 +1,34 @@
+<!-- Example product card -->
+<div class="product" data-product-name="Product Name" data-user-email="user@example.com">
+    <h2>Product Name</h2>
+    <button class="product-button">View Product</button>
+  </div>
+  
+  <script>
+    document.querySelectorAll('.product-button').forEach(button => {
+      button.addEventListener('click', async function() {
+        const productElement = this.closest('.product');
+        const productName = productElement.dataset.productName;
+        const userEmail = productElement.dataset.userEmail;
+  
+        try {
+          const response = await fetch('/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: userEmail, productName: productName })
+          });
+  
+          if (response.ok) {
+            console.log('Email sent successfully');
+          } else {
+            console.error('Error sending email');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      });
+    });
+  </script>
+  

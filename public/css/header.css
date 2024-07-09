@@ -18,6 +18,9 @@ header {
     background-color: white;
     /* box-shadow: 1px 1px 20px grey; */
 }
+.logo img {
+    width: 150px;
+}
 .flex {
     display: flex;
     justify-content: space-between;
@@ -200,4 +203,20 @@ ul.menu{
     transition: all .5s ease;
     transform: translate(-2000%);
     z-index: 4;
+}
+
+.emptyText {
+    font-size: 1.3rem;
+    color: orangered;
+    font-weight: bold;
+}
+
+
+@media (max-width:768px) {
+    .searchCtn {
+        display: none;
+    }
+    ul.menu{
+        width: 80%;
+    }
 }

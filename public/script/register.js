@@ -1,8 +1,11 @@
 var form = document.form
 var message = document.getElementById("message");
+// Regular expression pattern for validating an email
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 form.onsubmit = (e) => {
     e.preventDefault()
-        if (form.username.value.trim().trim() == "" || form.username.value.trim() == "" || form.email.value.trim() == "" || form.password.value.trim() == "" || form.cPassword.value.trim() == "") 
+        if (form.username.value.trim() == "" || form.username.value.trim() == "" || form.email.value.trim() == "" || form.password.value.trim() == "" || form.cPassword.value.trim() == "") 
         {
             message.innerHTML = "All Fields are required"
             message.style.transform = "translate(0%)";
@@ -15,6 +18,10 @@ form.onsubmit = (e) => {
         else if (form.username.value.trim().length < 5) 
         {
             message.innerHTML = "Username must be greater or equal to 5 characters"
+            message.style.transform = "translate(0%)";
+        } 
+        else if (!emailPattern.test(form.email.value)) {
+            message.innerHTML = "Input a valid email address"
             message.style.transform = "translate(0%)";
         } 
         else if (form.password.value.trim().length !== 4) {

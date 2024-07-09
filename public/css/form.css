@@ -180,3 +180,38 @@ span {
     transition: all .5s ease;
     transform: translate(-100%);
 }
+
+#loader {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orangered; /* Change to your preference */
+    justify-content: center;
+    align-items: center;
+}
+
+.rotate {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    animation: spin 2s linear infinite;
+    border-radius: 50%;
+    box-shadow: 0px 5px 20px white;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width:768px) {
+    .signImg {
+        display: none;
+    }
+    form {
+        width: 100%;
+    }
+}
