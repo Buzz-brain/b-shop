@@ -15,9 +15,6 @@
         "dest": "index.html"
       }
     ],
-    "output": {
-      "format": "html"
-    },
     "build": {
       "env": {
         "NODE_ENV": "production"
