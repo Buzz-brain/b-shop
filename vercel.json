@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "views/index.ejs",
+        "src": "src/views/index.ejs",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "public"
