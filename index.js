@@ -36,7 +36,8 @@ server.use(cookieParser());
 server.use(express.json());
 
 // SET ENGINE
-server.set("view engine", "ejs")
+server.set("view engine", "ejs");
+server.set("views", path.join(__dirname, "views")); // Set views directory
 
 // REASSIGN ENV DETAILS
 const tbname = process.env.TABLE
