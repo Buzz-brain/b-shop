@@ -96,8 +96,8 @@ server.get("/products", async (req, res) => {
 
 //---------- GET ADD PRODUCT ROUTE ----------------
 server.get("/addProduct", (req, res) => {
-    userNotLoggedIn(req, res); // Check if user is logged in
-    res.render("addProduct"); // Render the addProduct page
+    userNotLoggedIn(req, res); //Check if user is logged in
+    res.render("addProduct"); //Render the addProduct page
 });
 
 //---------- GET PRODUCT DETAILS ROUTE ----------------
