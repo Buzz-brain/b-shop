@@ -46,11 +46,11 @@ const dbname = process.env.DB_NAME
 // ----------------------- GET ALL ROUTE STARTS --------------------------------
 // ----------------------- GET ALL ROUTE STARTS --------------------------------
 
-server.get("/", async (req, res) => {
-    // Fetch all products from the database
-    const products = await _conn.db(dbname).collection("products").find().toArray();
-    res.render("index", { products: products });
-});
+// server.get("/", async (req, res) => {
+//     // Fetch all products from the database
+//     const products = await _conn.db(dbname).collection("products").find().toArray();
+//     res.render("index", { products: products });
+// });
 
 //---------- GET 404 ROUTE ----------------
 server.get("/404", (req, res) => {
@@ -176,21 +176,21 @@ server.get("/checkout", async (req, res) => {
 });
 
 //---------- GET HOME ROUTE ----------------
-// server.get("/", async (req, res) => {
-//     userNotLoggedIn(req, res); // Check if user is logged in
-//     // Fetch all products from the database
-//     const products = await _conn.db(dbname).collection("products").find().toArray();
-//     if (products) {
-//         // If products exist, render the home page with the products data
-//         res.render("index", { products: products });
-//     } else {
-//         // If products not found, send a 401 status and redirect to the login page
-//         res.status(401).send({
-//             message: "Products not found"
-//         });
-//         res.redirect("/login");
-//     }
-// });
+server.get("/", async (req, res) => {
+    userNotLoggedIn(req, res); // Check if user is logged in
+    // Fetch all products from the database
+    const products = await _conn.db(dbname).collection("products").find().toArray();
+    if (products) {
+        // If products exist, render the home page with the products data
+        res.render("index", { products: products });
+    } else {
+        // If products not found, send a 401 status and redirect to the login page
+        res.status(401).send({
+            message: "Products not found"
+        });
+        res.redirect("/login");
+    }
+});
 
 
 
