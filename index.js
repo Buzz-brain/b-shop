@@ -15,7 +15,7 @@ const server = express();
 dotenv.config()
 
 // Configure multer for file upload
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: '/tmp/' });
 
 // Configure Cloudinary
 cloudinary.config({
