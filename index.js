@@ -46,6 +46,12 @@ const dbname = process.env.DB_NAME
 // ----------------------- GET ALL ROUTE STARTS --------------------------------
 // ----------------------- GET ALL ROUTE STARTS --------------------------------
 
+server.get("/", async (req, res) => {
+    // Fetch all products from the database
+    const products = await _conn.db(dbname).collection("products").find().toArray();
+    res.render("index", { products: products });
+});
+
 //---------- GET 404 ROUTE ----------------
 server.get("/404", (req, res) => {
     userNotLoggedIn(req, res); // Check if user is logged in
@@ -186,11 +192,7 @@ server.get("/checkout", async (req, res) => {
 //     }
 // });
 
-server.get("/", async (req, res) => {
-    // Fetch all products from the database
-    const products = await _conn.db(dbname).collection("products").find().toArray();
-    res.render("index", { products: products });
-});
+
 
 
 
