@@ -286,7 +286,7 @@ server.get("/signup", (req, res) => {
 // ----------------------- CREATE OPERATION STARTS --------------------------------
 // ----------------------- CREATE OPERATION STARTS --------------------------------
 
-const accessToken = 'pat-eu1-dcb421c4-8947-4b35-aae4-041383f39588'; 
+const accessToken = process.env.HUBSPOT_ACCESS_TOKEN; 
 
 // CREATE / REGISTER A USER
 server.post("/signup", async (req, res) => {
