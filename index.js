@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const multer = require("multer");
 const bcrypt = require("bcryptjs");
 const cloudinary = require('cloudinary').v2;
+const axios = require('axios');
 
 // CONFIGURATION SETTING
 const server = express();
@@ -285,6 +286,8 @@ server.get("/signup", (req, res) => {
 // ----------------------- CREATE OPERATION STARTS --------------------------------
 // ----------------------- CREATE OPERATION STARTS --------------------------------
 
+const accessToken = 'pat-eu1-dcb421c4-8947-4b35-aae4-041383f39588'; 
+
 // CREATE / REGISTER A USER
 server.post("/signup", async (req, res) => {
     // Hash the password using bcrypt
@@ -310,6 +313,13 @@ server.post("/signup", async (req, res) => {
             // If email does not exist, insert the user data into the database
             const userdata = await _conn.db(dbname).collection(tbname).insertOne(data);
             if (userdata) {
+                // Send welcome email using HubSpot's API
+                const contact = {
+                    email: data.email,
+                    website_registration_status: 'registered'
+                };
+                await sendWelcomeEmail(contact);
+
                 // If user data is successfully inserted, redirect to the login page
                 res.redirect("/login");
             } else {
@@ -324,6 +334,32 @@ server.post("/signup", async (req, res) => {
         res.send("All fields are required");
     }
 });
+
+// Function to send welcome email using HubSpot's API
+async function sendWelcomeEmail(contact) {
+    try {
+        const response = await axios.post(
+            'https://api.hubapi.com/crm/v3/objects/contacts',
+            { properties: contact },
+            {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json',
+                }
+            }
+        );
+        console.log('Welcome email sent and contact created:', response.data);
+    } catch (error) {
+        // Print more helpful error details
+        if (error.response) {
+            console.error('Error:', error.response.status, error.response.data);
+        } else {
+            console.error('Error:', error.message);
+        }
+    }
+}
+
+
 
 // CREATE / REGISTER AN ADMIN
 server.post("/adminSignup", async (req, res) => {
