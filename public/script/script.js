@@ -101,6 +101,18 @@ function addToCart(productId, productName, categoryName, rating, price, delPrice
         quantity: 1 // Initial quantity
     };
 
+    // Klaviyo 'Added to cart' event tracking
+    if (typeof _learnq !== 'undefined') {
+        _learnq.push(['track', 'Added to cart', {
+            ProductName: productName,
+            ProductID: productId,
+            Price: price,
+            Quantity: 1,
+            Site: 'WebsiteA', // Optionally set your site name
+            URL: window.location.href
+        }]);
+    }
+
     // Get existing cart items from local storage or initialize empty array
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
