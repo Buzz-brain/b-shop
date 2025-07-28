@@ -143,7 +143,7 @@ placeOrderBtn.addEventListener('click', () => {
           },
         ]);
 
-        console.log(emailModal.value, Total.textContent, cartCount.textContent, window.location.href);
+        // console.log(emailModal.value, Total.textContent, cartCount.textContent, window.location.href);
 
         console.log("Klaviyo: Started Checkout event fired");
         }
