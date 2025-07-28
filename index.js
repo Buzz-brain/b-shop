@@ -28,6 +28,13 @@ cloudinary.config({
 
 //CONNECT MONGODB
 const _conn = new mongodb.MongoClient(process.env.DB_URL)
+_conn.connect((err) => {
+    if (err) {
+        console.error("Failed to connect to MongoDB:", err);
+        return;
+    }
+    console.log("Connected to MongoDB");
+});
 
 // USE SERVER
 server.use(express.static(path.join(__dirname, "public")));
@@ -262,7 +269,7 @@ server.get("/login", async (req, res) => {
         }
     } catch (error) {
         console.error("Error authenticating user:", error);
-        res.render("login"); // Render the login page if there's an error
+        // res.render("login"); // Render the login page if there's an error
     }
 });
 

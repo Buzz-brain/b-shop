@@ -79,6 +79,12 @@ addToWishlistButtons.forEach(button => {
 });
 
 let cartItemNumber = 0;
+    //    <!-- Klaviyo Tracking Script -->
+    // <script type="text/javascript">
+      var _learnq = _learnq || [];
+      _learnq.push(['account', 'X2gYeG']); // Replace with your actual public API key
+    // </script>
+console.log(_learnq);
 
 // Function to add item to cart
 function addToCart(productId, productName, categoryName, rating, price, delPrice, productImg) {
@@ -101,18 +107,41 @@ function addToCart(productId, productName, categoryName, rating, price, delPrice
         quantity: 1 // Initial quantity
     };
 
-    // Klaviyo 'Added to cart' event tracking
-    if (typeof _learnq !== 'undefined') {
-        _learnq.push(['track', 'Added to cart', {
-            ProductName: productName,
-            ProductID: productId,
-            Price: price,
-            Quantity: 1,
-            Site: 'WebsiteA', // Optionally set your site name
-            URL: window.location.href
-        }]);
-    }
 
+    // Klaviyo 'Added to cart' event tracking
+    if (window._learnq && typeof _learnq.track === "function") {
+      _learnq.push([
+        "track",
+        "Added to cart",
+        {
+          ProductName: productName,
+          ProductID: productId,
+          Price: price,
+          Quantity: 1,
+          Site: "WebsiteA", // Optionally set your site name
+          URL: window.location.href,
+        },
+      ]);
+    } else {
+      // Optionally, retry after a short delay
+      setTimeout(function () {
+        if (window._learnq && typeof _learnq.track === "function") {
+         _learnq.push([
+           "track",
+           "Added to cart",
+           {
+             ProductName: productName,
+             ProductID: productId,
+             Price: price,
+             Quantity: 1,
+             Site: "WebsiteA", // Optionally set your site name
+             URL: window.location.href,
+           },
+         ]);
+        }
+      }, 500);
+    }
+console.log(_learnq);
     // Get existing cart items from local storage or initialize empty array
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
