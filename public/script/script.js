@@ -80,10 +80,8 @@ addToWishlistButtons.forEach(button => {
 
 let cartItemNumber = 0;
     //    <!-- Klaviyo Tracking Script -->
-    // <script type="text/javascript">
       var _learnq = _learnq || [];
       _learnq.push(['account', 'X2gYeG']); // Replace with your actual public API key
-    // </script>
 console.log(_learnq);
 
 // Function to add item to cart

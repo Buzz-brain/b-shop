@@ -94,6 +94,8 @@ function removeMessage() {
     // Get the modal
 var modal = document.getElementById("orderModal");
 
+var _learnq = window._learnq || [];
+
 // Get the button that opens the modal
 const placeOrderBtn = document.getElementById("placeOrder");
 
@@ -123,6 +125,27 @@ placeOrderBtn.addEventListener('click', () => {
         let phoneNumberModal = document.getElementsByClassName("phoneNumber")[0];
         emailModal.value = emailAdd
         phoneNumberModal.value = phoneNumber
+
+        _learnq.push([
+          "identify",
+          {
+            $email: emailModal.value,
+          },
+        ]);
+
+        _learnq.push([
+          "track",
+          "Started Checkout",
+          {
+            cart_total: Total.textContent,
+            item_count: cartCount.textContent,
+            url: window.location.href,
+          },
+        ]);
+
+        console.log(emailModal.value, Total.textContent, cartCount.textContent, window.location.href);
+
+        console.log("Klaviyo: Started Checkout event fired");
         }
     })
 
@@ -150,3 +173,8 @@ span.addEventListener("click", () => {
         });
     });
 // }
+
+
+
+
+
